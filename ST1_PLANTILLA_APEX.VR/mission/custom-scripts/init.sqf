@@ -1,7 +1,7 @@
 
 // ============================================================================
 //                                                                             |
-//        This script will be run for both the server and players.             |
+//                    Este script es ejecutado por todos                       |
 //                                                                             |
 // ============================================================================
 
@@ -14,7 +14,7 @@
 // =============================================================================
                                     sleep 1;
                                     
-//  Anything below this line will only be executed beyond the briefing screen. |
+//  Todo lo que esté debajo de esta línea se ejecuta después del briefing.     |
 // =============================================================================
 
 
