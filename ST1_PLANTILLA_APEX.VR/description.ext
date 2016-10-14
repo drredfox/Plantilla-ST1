@@ -77,9 +77,9 @@ class cfgNotifications {
 // ============================================================================
 class CfgMusic { //Música
     tracks[]={};
-    class musica {
+    class intro {
         name = "";
-        sound[] = {mission\sounds\intro.ogg, db+1, 1.0};
+        sound[] = {mission\sounds\intro.ogg, 1, 1};
     };
 };
 

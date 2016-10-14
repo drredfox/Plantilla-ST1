@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1477.314,10.596545,1288.8732};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={1459.6643,29.561144,1447.1521};
+		dir[]={0.13110423,-0.25252935,-0.95872808};
+		up[]={0.034219805,0.96757442,-0.25023881};
+		aside[]={-0.9908244,-2.5914051e-007,-0.13549358};
 	};
 };
 binarizationWanted=0;
@@ -5228,7 +5228,7 @@ class Mission
 			{
 				position[]={1480,5,1286};
 			};
-			title="Este trigger inicializa IA dentro de su area.";
+			description="Este trigger inicializa IA dentro de su area y la equipa. En este caso equipa a los civiles de BLUFOR (side_a)";
 			id=473;
 		};
 		class Item125

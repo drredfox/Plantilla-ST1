@@ -9,7 +9,7 @@
 // ============================================================================
 
 if (!isServer) exitWith {};
-waitUntil{scriptDone(mission_settings)};
+[{scriptDone(mission_settings)}, {
 CommsCompleted=false;
 HackCompleted=false;
 RescueCompleted=false;
@@ -113,3 +113,4 @@ side_a_side,
 [] spawn BRM_fnc_checkTasks;
 
 true
+}, []] call CBA_fnc_waitUntilAndExecute;

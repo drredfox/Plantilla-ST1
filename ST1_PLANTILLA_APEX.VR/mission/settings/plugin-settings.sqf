@@ -8,10 +8,11 @@
 // ============================================================================
 //                          == INTRO CUTSCENE ==                               |
 //                                                                             |
-//  Valids are: "ESTABLISHING", "TEXT", "CINEMA", "CUSTOM", "QUOTE" and "NONE".|
+//  Valids are: "ESTABLISHING", "TEXT", "CINEMA", "CUSTOM", "QUOTE", "APEX"    | 
+//                               and "NONE".                                   |
 // ============================================================================
 
-intro_cutscene = "CUSTOM";
+intro_cutscene = "APEX";
 
 // ============================================================================
 //                             == T8 UNITS ==                               |

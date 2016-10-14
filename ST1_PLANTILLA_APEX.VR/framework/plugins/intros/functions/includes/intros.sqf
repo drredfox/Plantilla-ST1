@@ -107,3 +107,47 @@ case "QUOTE": {
 	sleep 2;
 	100012 cutfadeout 1;
 };
+
+case "APEX": {
+    ST1_MissionIntroImage = "mission\images\group-logo.paa";
+    ST1_MissionDesc = getText (missionConfigFile >> "onLoadMission");
+    [mission_init_time, ST1_MissionIntroImage, toUpper(ST1_MissionDesc)] spawn {
+		0 fadeSound 0;
+        _l = ["tLayer"] call BIS_fnc_rscLayer;
+		_l cutText ["", "BLACK FADED", 100];
+		_month = ["Unknowinus", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+		  "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"] 
+ 		select (date select 1);
+		playmusic "intro";
+        sleep 1.2;
+		[ 
+		 [ 
+		  worldname 
+		 ], 
+		 [ 
+		  (str(date select 2) + " de " + _month + " " + str(date select 0)), 
+		  1, 
+		  5 
+		 ], 
+		 [ 
+		  "Equipo " + groupID(group player),  
+		  1,  
+		  1,  
+		  4 
+		 ] 
+		] spawn BIS_fnc_EXP_camp_SITREP;
+		sleep 15;
+		["<t size='1' color='#FFFFFF' font='PuristaBold'>SIMULACIÓN TIER 1 PRESENTA</t>", 0, -1, 3, 6] spawn BIS_fnc_dynamicText;
+        //["<img size= '9' shadow='false' image='" + (_this select 1) + "'/><br/><br/><t size='.7' color='#FFFFFF' font='PuristaBold'>PRESENTA</t>", 0, 0, 3, 6] spawn BIS_fnc_dynamicText;
+        sleep 12;
+        ["<t size='1.5' font='PuristaBold' color='#FFFFFF'>" + (_this select 2) + "</t>",0,0.45,4,0] spawn BIS_fnc_dynamicText;
+		10 fadeSound 1;
+        sleep 2;
+		"dynamicBlur" ppEffectEnable true;   
+		"dynamicBlur" ppEffectAdjust [6];   
+		"dynamicBlur" ppEffectCommit 0;     
+		"dynamicBlur" ppEffectAdjust [0.0];  
+		"dynamicBlur" ppEffectCommit 10;
+        _l cutText ["", "BLACK IN", 3];
+    };
+};
