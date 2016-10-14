@@ -90,7 +90,7 @@ class CfgSounds
 {
 	class radioTransmit {
 		name = "Radio_Transmit_Sound";
-		sound[] = {mission\sounds\in2c.ogg, 1, 1}; 		
+		sound[] = {mission\sounds\in2c.ogg, 1, 1};
 		titles[] = {};
 	};
 	class TickerBeeps
@@ -99,4 +99,26 @@ class CfgSounds
 		sound[] = {mission\sounds\beeps.ogg, 1, 1};
 		titles[] = {};
 	};
+};
+
+class CfgRadio {
+  sounds[] = {};
+  	class Start1
+  	{
+  		name = "";
+  		sound[] = {"mission\sounds\start1.ogg", 1, 1};
+  		title = "";
+  	};
+    class Start2
+    {
+      name = "";
+      sound[] = {"mission\sounds\start2.ogg", 1, 1};
+      title = "";
+    };
+    class Start3
+    {
+      name = "";
+      sound[] = {"mission\sounds\start3.ogg", 1, 1};
+      title = "";
+    };
 };
