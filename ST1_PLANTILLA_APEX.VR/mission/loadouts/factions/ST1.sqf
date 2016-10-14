@@ -20,7 +20,7 @@ _defaultInsignia = "ST1";
 	"ocp"
 */
 
-_camo = "WDL";
+_camo = "DIG";
 
 // WEAPONS =====================================================================
 
@@ -29,7 +29,7 @@ _commonRIFLEGL = _RHSMK18GL320;
 _commonPISTOL = _M9;
 _commonSMG = _SMG;
 _commonMG = _M249L;
-_commonMARKSMAN = _M110;
+_commonMARKSMAN = _SIG556;
 _commonSNIPER = _M200;
 _commonAT = _AT4;
 _specAT = _TitanAT;
@@ -40,10 +40,9 @@ _commonCCO = "rhsusf_acc_compm4";
 _commonMAGNIFIED = "ACE_optic_LRPS_2D";
 _marksmanMAGNIFIED = "ACE_optic_SOS_2D";
 _commonSUPPRESSOR = "rhsusf_acc_nt4_black";
-_marksmanSUPPRESSOR = "RH_m110sd_t";
+_marksmanSUPPRESSOR = "muzzle_snds_B_khk_F";
 _sniperSUPPRESSOR = "muzzle_snds_338_black";
 _commonBIPOD = "bipod_01_F_blk";
-_commonPISTOLSUPPRESSOR = "RH_m9qd";
 _commonLASER = "rhsusf_acc_anpeq15side_bk";
 _NVG = "rhsusf_ANPVS_15";
 
@@ -182,15 +181,6 @@ _unit addGoggles _randomGOGGLE;
 _HMG = "RHS_M2_Gun_Bag";
 _tripod = "RHS_M2_Tripod_Bag";
 
-if (hasInterface) then {
-	if (mission_dlc_MarksMan) then { 
-		_sniperUniform = "U_B_FullGhillie_sard";
-		_reconMARKSMAN = _MAR10;
-		_reconMAGNIFIED = "optic_AMS";
-		_reconSUPPRESSOR = "muzzle_snds_338_black";
-	};
-};
-
 // =============================================================================
 if (!_isMan) exitWith {};
 switch (true) do {
@@ -233,12 +223,11 @@ switch (true) do {
     case (_isReconLeader): {
         [_reconleaderHEAD, _reconUNIFORM, _reconVEST, "empty"] call _useUniform;
 		["BPR"] call _addRadio;
-        [[_unit,[_bsmoke,2],[_gsmoke,2],[_grenade,2],[_IRStrobe,1],[_CableTie,1],[(_commonRIFLE select 2),_countRIFLET],[_gchemlight,2]]] call _addtoVest;    
+        [[_unit,[_bsmoke,2],[_gsmoke,2],[_grenade,2],[_IRStrobe,1],[_CableTie,1],[(_commonRIFLE select 2),_countRIFLET],[_gchemlight,2]]] call _addtoVest;
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         [_commonPISTOL, _countPISTOL] call _addWeaponKit;
         ["primary", _commonSUPPRESSOR] call _attachToWeapon;
         ["primary", _commonRCO] call _attachToWeapon;
-		["secondary", _commonPISTOLSUPPRESSOR] call _attachToWeapon;
 		["laserdesignator"] call _addOptics;
     };
 
@@ -343,7 +332,7 @@ switch (true) do {
 		["primary", _commonLASER] call _attachToWeapon;
 
     };
-	
+
 	case (_isRecon): {
         [_reconHEAD, _reconUNIFORM, _reconVEST, _commonBACKPACK] call _useUniform;
         ["binoc"] call _addOptics;
@@ -358,15 +347,14 @@ switch (true) do {
 	case (_isReconLeader): {
         [_reconleaderHEAD, _reconUNIFORM, _reconVEST, "empty"] call _useUniform;
 		["BPR"] call _addRadio;
-        [[_unit,[_bsmoke,2],[_gsmoke,2],[_grenade,2],[_IRStrobe,1],[_CableTie,1],[(_commonRIFLE select 2),_countRIFLET],[_gchemlight,2]]] call _addtoVest;    
+        [[_unit,[_bsmoke,2],[_gsmoke,2],[_grenade,2],[_IRStrobe,1],[_CableTie,1],[(_commonRIFLE select 2),_countRIFLET],[_gchemlight,2]]] call _addtoVest;
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         [_commonPISTOL, _countPISTOL] call _addWeaponKit;
         ["primary", _commonSUPPRESSOR] call _attachToWeapon;
         ["primary", _commonRCO] call _attachToWeapon;
-		["secondary", _commonPISTOLSUPPRESSOR] call _attachToWeapon;
 		["laserdesignator"] call _addOptics;
     };
-	
+
     case (_isReconMedic): {
         [_reconHEAD, _reconUNIFORM, _reconVEST, _medBACKPACK] call _useUniform;
         ["binoc"] call _addOptics;
@@ -387,7 +375,7 @@ switch (true) do {
         ["primary", _commonSUPPRESSOR] call _attachToWeapon;
 		["primary", _commonRCO] call _attachToWeapon;
     };
-	
+
 	case (_isHeavyAT): {
         [_commonHEAD, _commonUNIFORM, _commonVEST, _medBackpack] call _useUniform;
         [[_unit,[_wsmoke,2],[_gsmoke,2],[_grenade,2]]] call _addtoVest;
@@ -395,9 +383,9 @@ switch (true) do {
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         ["primary", _commonCCO] call _attachToWeapon;
         ["primary", _commonLASER] call _attachToWeapon;
-        [_specAT, 2] call _addWeaponKit; 
+        [_specAT, 2] call _addWeaponKit;
     };
-	
+
 	case (_isATAssistant): {
         [_commonHEAD, _commonUNIFORM, _commonVEST, _bigBackpack] call _useUniform;
         [[_unit,[_wsmoke,2],[_gsmoke,2],[_grenade,2],[(_commonRIFLE select 2),3],[_gchemlight,2],[_IRStrobe,1],[_CableTie,1]]] call _addtoVest;
@@ -406,7 +394,7 @@ switch (true) do {
         ["primary", _commonCCO] call _attachToWeapon;
         ["primary", _commonLASER] call _attachToWeapon;
     };
-	
+
 	case (_isAA): {
         [_commonHEAD, _commonUNIFORM, _commonVEST, _medBackpack] call _useUniform;
         [[_unit,[_wsmoke,2],[_gsmoke,2],[_grenade,2]]] call _addtoVest;
@@ -414,9 +402,9 @@ switch (true) do {
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         ["primary", _commonCCO] call _attachToWeapon;
         ["primary", _commonLASER] call _attachToWeapon;
-        [_specAA, 2] call _addWeaponKit; 
+        [_specAA, 2] call _addWeaponKit;
     };
-	
+
 	case (_isAAAssistant): {
         [_commonHEAD, _commonUNIFORM, _commonVEST, _bigBackpack] call _useUniform;
         [[_unit,[_wsmoke,2],[_gsmoke,2],[_grenade,2],[(_commonRIFLE select 2),3],[_gchemlight,2],[_IRStrobe,1],[_CableTie,1]]] call _addtoVest;
