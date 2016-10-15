@@ -58,17 +58,17 @@ side_a_color = "blue";              // Color of the player side.
 side_a_faction = "NATO";            // Faction of the players.
 side_a_name = "Unidad ST1";        // Player faction name.
 ST1freqs = [					  //Frecuencias TFAR para los grupos
-    [31,    32],   //Mando
-    [31,    33],   //Alpha
-    [31,    36],   //Bravo
-	[31,    39],   //Charlie
-    [31,    42],   //Delta
-	[31,    45],   //Recon
-	[31,    46],   //Foxtrot
-	[31,    47],   //Wilco
-	[31,    48],   //Shocker
-    [31,    49],   //Sierra
-    [31,    50]  //Spartan
+  [31,    32],   //Mando
+  [31,    33],   //Alpha
+  [31,    36],   //Bravo
+  [31,    39],   //Charlie
+  [31,    42],   //Delta
+  [31,    45],   //Recon
+  [31,    46],   //Foxtrot
+  [31,    47],   //Wilco
+  [31,    48],   //Shocker
+  [31,    49],   //Sierra
+  [31,    50]  //Spartan
 ];
 
 // Name the player groups.

@@ -13,9 +13,6 @@
 
 [{(mission_AI_controller)}, {
 
-// if ("spawn_ai" in usedPlugins) then { waitUntil{(!isNil "BRM_SpawnAI_fnc_infantry")};
-// };
-
 	//DAC
 	if ("dac_plugin" in usedPlugins) then { [{(!isNil "BRM_DAC_fnc_new") && (time > 5)}, {
 		[trg1, "Create an activated normal default friendly zone named zone1 on network 1, with 1 group of infantry."] spawn BRM_DAC_fnc_new;
@@ -23,9 +20,9 @@
 		// /* ================================================
 
 		// EJEMPLOS DE ZONAS DAC
-		
+
 		// RECORDAD DESACTIVAR EL DAC EN framework\plugins\plugins.cpp SI NO CREAIS NINGUNA ZONA PARA EVITAR PROBLEMAS CON NIEBLA
-		
+
 		// Enemigos fáciles, 1 escuadra de infantería:
 		// [trg1, "Create an activated easy default enemy zone named anything on network random, with 1 squad of infantry."] spawn BRM_DAC_fnc_new;
 
@@ -47,7 +44,7 @@
 		// =================================================== */
 
 	}, []] call CBA_fnc_waitUntilAndExecute };
-	
+
 	//T8
 	//Este sistema es algo más complejo. Evitadlo si no tenéis nociones básicas de scripting.
 	/*
@@ -58,7 +55,7 @@
 	_bigGroup = [ "B_soldier_SL_F", "B_medic_F", "B_soldier_F", "B_soldier_AR_F", "B_soldier_TL_F", "B_soldier_F", "B_soldier_F", "B_soldier_LAT_F" ]; //Grupo de 8 hombres.
 
 	//Creamos las zonas, indicando qué grupos y con qué tarea.
-	unitsZone1 = 
+	unitsZone1 =
 	[        //Grupo    //Punto de spawn //Son solo Inf? //Bando     //Tarea         //Piden refuerzos? //Dan apoyo a otros grupos?  //False si task es DEFEND/DEFEND_BASE
 		[ [  _LSVGroup, "mZone_1",       false,            WEST ], [ "PATROL" ], [true,            true,                            true] ],
 		[ [  _smallGroup, "mZone_1", true, WEST ], [ "PATROL" ], [true, true, true] ],
@@ -67,15 +64,15 @@
 		[ [  _bigGroup, "mZone_1", true, WEST ], [ "GARRISON" ], [true, true, true] ],
 		[ [  _bigGroup, "mZone_1", true, WEST ], [ "OCCUPY" ], [true, true, true] ]
 	];
-	
-	unitsZone2 = 
-	[   
+
+	unitsZone2 =
+	[
 		[ [  _smallGroup, "mZone_2", true, WEST ], [ "PATROL" ], [true, true, true] ],
 		[ [  _smallGroup, "mZone_2", true, WEST ], [ "PATROL" ], [true, true, true] ],
 		[ [  _smallGroup, "mZone_2", true, WEST ], [ "PATROL" ], [true, true, true] ],
 		[ [  _bigGroup, "mZone_2", true, WEST ], [ "PATROL_GARRISON" ], [true, true, true] ]
 	];
-	
+
 	//Activamos las zonas
 	//La Zona 1 se creará al inicio de la misión
 	[ unitsZone1 ] spawn T8U_fnc_Spawn;
@@ -83,19 +80,19 @@
 	["unitsZone2", "mZone2", "EAST", "WEST", 800] spawn T8U_fnc_Zone;
 
 	//Tasks disponibles:
-	//"PATROL" Patrulla aleatoria dentro del marcador. 
+	//"PATROL" Patrulla aleatoria dentro del marcador.
 	//"PATROL_AROUND" Patrulla circular alrededor del marcador.
 	//"PATROL_URBAN" Patrulla aleatoria por calles dentro del marcador.
 	//"OCCUPY" Ocupan edificios cercanos y vigilar ventanas. Intentan permanecer juntos y no moverse.
 	//"GARRISON" Ocupan edificios (o arbustos/rocas si no hay ninguno cerca). Se mueven entre posiciones.
 	//"PATROL_GARRISON" Igual que PATROL_URBAN, pero irán entrando en edificios de forma aleatoria.
 	//"DEFEND" Ocupan estáticas. Los que se queden sin harán patrulla por el centro del marcador.
-	//"DEFEND_BASE" Ocupan estáticas y posiciones en edificios militares. 
+	//"DEFEND_BASE" Ocupan estáticas y posiciones en edificios militares.
 	//"OVERWATCH" Buscan posición elevada para tener visual con el marcador
 	//"ATTACK" Atacan posición, normalmente flanqueando.
 	//"LOITER" Dan vueltas alrededor del marcador. Si hay tiendas de campaña u hogueras se sentarán al lado. Algunos se quedarán quietos de pie haciendo animaciones.
-	
-	
+
+
 
 	}, []] call CBA_fnc_waitUntilAndExecute }; */
 

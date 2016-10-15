@@ -30,15 +30,15 @@ class BRM {
     };
     class misc {
         file = "framework\engine\functions\engine\misc";
-		class animation{};
+		    class animation{};
         class getSpawnPoint{};
         class syncTime{};
         class getSideInfo{};
-		class spawnGunners{};
-		class messageParser{};
-		class messageLog{};
-		class createInsertion{};
-		class createExtraction{};
+    		class spawnGunners{};
+    		class messageParser{};
+    		class messageLog{};
+    		class createInsertion{};
+    		class createExtraction{};
     };
     class ending {
         file = "framework\engine\functions\engine\ending";

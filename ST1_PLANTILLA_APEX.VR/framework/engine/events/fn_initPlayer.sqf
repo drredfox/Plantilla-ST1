@@ -28,7 +28,7 @@ if (!hasInterface) exitWith {};
 finishMissionInit;
 waitUntil {(player == player)};
 waitUntil{!(isNull player)};
-waitUntil{!(isNil "mission_params_read")};
+//waitUntil{!(isNil "mission_params_read")};
 
 _playerLog = format ["INITIALIZING PLAYER '%1' (%2)", name player, player];
 

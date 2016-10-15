@@ -32,7 +32,7 @@ plugins_loaded = false;
 
 for "_i" from 0 to ((count LOADED_PLUGINS) - 1) do {
     private ["_plugin"];
-    
+
     _plugin = configName(LOADED_PLUGINS select _i);
 
     usedPlugins pushBack _plugin;
@@ -62,7 +62,7 @@ _logPlugins = [];
 
 reverse _logPlugins;
 
-_logPlugins spawn {
+[{!isNil "framework_init_time"}, {
     waitUntil {!isNil "framework_init_time"};
     { player createDiaryRecord [FRAMEWORK_DIARY, ["Framework", _x]] } forEach _this;
     player createDiaryRecord [FRAMEWORK_DIARY, ["Framework", "<br/>These are the plugins currently being utilized in this mission: </br>"]];
@@ -71,4 +71,4 @@ _logPlugins spawn {
     player createDiaryRecord [FRAMEWORK_DIARY, ["Framework", format ["Initialized in %1 seconds.", framework_init_time]]];
     player createDiaryRecord [FRAMEWORK_DIARY, ["Framework", format ["BromA Framework MK 3 - version %1", framework_version]]];
     player createDiaryRecord [FRAMEWORK_DIARY, ["Framework", "<br/>======================================"]];
-};
+}, _logPlugins] call CBA_fnc_waitUntilAndExecute;
