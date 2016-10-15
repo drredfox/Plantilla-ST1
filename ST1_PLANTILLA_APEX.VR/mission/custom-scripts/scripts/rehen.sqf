@@ -1,4 +1,4 @@
-// Set AI Hostage Script 
+// Set AI Hostage Script
 // By Galactic Twinkles
 // Define Captive
 _captive = _this select 0;
@@ -41,7 +41,7 @@ _captive setBehaviour "Careless"; // Set Behaviour to Careless because, you know
 							} else {
 								_this select 0 switchMove "Acts_AidlPsitMstpSsurWnonDnon_out";
 							};
-							_complMessage = selectRandom ["I thought I was gonna die in here!","Thank you so much man.","I think I shit my pants...","Can I hug you?","I'M ALIVE.","Where the hell am I?"];
+							_complMessage = selectRandom ["Pensaba que iba a morir aquí...","Os lo agradezco.","Creo que me he cagado encima.","Sacadme de aquí de una vez.","Joder ¿Por qué habéis tardado tanto?","Rápido, vámonos."];
 							["Hostage", _complMessage] remoteExec ["BIS_fnc_showSubtitle"];
 							sleep 5.5;
 							(_this select 0) enableAI "MOVE";
@@ -53,7 +53,7 @@ _captive setBehaviour "Careless"; // Set Behaviour to Careless because, you know
 							RescueCompleted=true;publicvariable "RescueCompleted"
 						},
 /* 9 code executed on interruption */       {
-						_intrMessage = selectRandom ["Hey! I don't wanna die here!","Don't leave me here man! Please!","THEY'RE EATING PEOPLE. GET ME OUT OF HERE.","*Mumbles* Shit shit shit..."];
+						_intrMessage = selectRandom ["¡No me dejéis aquí!","¡Eh, no te vayas!","¡Me matarán si me dejas aquí!","Joder, joder, joder..."];
 						["Hostage", _intrMessage] remoteExec ["BIS_fnc_showSubtitle"];
 					    },
 /* 10 arguments */			    [_anim],

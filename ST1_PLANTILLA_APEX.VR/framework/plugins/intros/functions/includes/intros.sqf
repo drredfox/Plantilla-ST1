@@ -146,7 +146,7 @@ case "APEX": {
       case 1: {player globalRadio "Start2"; ["HQ", "A todas las unidades. ¡Nos movemos!"] call BIS_fnc_showSubtitle;};
       case 2: {player globalRadio "Start3"; ["HQ", "Procedan con la operación. Buena suerte. Corto."] call BIS_fnc_showSubtitle;};
     };
-    sleep 10;
+    sleep 9;
     enableSentences false;
     ["<t size='1.5' font='PuristaBold' color='#FFFFFF'>" + (_this select 2) + "</t>",0,0.45,4,0] spawn BIS_fnc_dynamicText;
 		10 fadeSound 1;
