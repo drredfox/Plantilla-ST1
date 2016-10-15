@@ -66,7 +66,7 @@ _initialized = player getVariable ["unit_initialized",false];
 
 if (_initialized) exitWith {};
 
-private["_faction","_role","_rolename","_loadout"];
+private["_faction","_role"];
 
 // Reads player's init line. ===================================================
 
@@ -102,22 +102,17 @@ if (toUpper(_faction) in _aliasAUTO) then {
 };
 
 if (toUpper(_role) in _aliasAUTO) then {
-    _rolename = getText (configfile >> "CfgVehicles" >> typeOf player >> "displayName");
-	_loadout = typeOf player;
+    _role = getText (configfile >> "CfgVehicles" >> typeOf player >> "displayName");
 };
 
 if ((!(_faction in _aliasNONE)) && (!units_player_useVanillaGear)) then {
-	if (toUpper(_role) in _aliasAUTO) then {
-    [player, _faction, _loadout] call BRM_fnc_assignLoadout;
-	} else {
-	[player, _faction, _role] call BRM_fnc_assignLoadout;
-	};
+    [player, _faction, _role] call BRM_fnc_assignLoadout;
 };
 
 // Assigns alias to other units and groups. ====================================
 
 if (player_is_jip) then {
-    [player, _groupName, _rolename] call BRM_fnc_setAlias;
+    [player, _groupName, _role] call BRM_fnc_setAlias;
 };
 
 // Initializes score related variables. ========================================

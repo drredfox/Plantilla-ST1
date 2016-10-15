@@ -3,20 +3,20 @@
 
 NAME:
     BRM_fnc_initVariables
-    
+
 AUTHOR(s):
     Nife
 
 DESCRIPTION:
-    Initializes all environment variables related to the Framework, such as 
+    Initializes all environment variables related to the Framework, such as
     units, groups, object arrays and settings.
 
 PARAMETERS:
     None.
-    
+
 USAGE:
     [] call BRM_fnc_initVariables;
-    
+
 RETURNS:
     Nothing.
 
@@ -45,7 +45,7 @@ if (isNil "mission_dead_west") then { mission_dead_west = 0 };
 if (isNil "mission_dead_east") then { mission_dead_east = 0 };
 if (isNil "mission_dead_independent") then { mission_dead_independent = 0 };
 if (isNil "mission_dead_civilian") then { mission_dead_civilian = 0 };
-           
+
 if (isNil "mission_players_A") then { mission_players_A = [] };
 if (isNil "mission_players_B") then { mission_players_B = [] };
 if (isNil "mission_players_C") then { mission_players_C = [] };
@@ -61,13 +61,18 @@ if (isNil "mission_running") then { mission_running = true };
 if (isNil "mission_AI_controller") then { mission_AI_controller = false };
 if (isNil "mission_HC_enabled") then { mission_HC_enabled = false };
 
+if (isNil "mission_ACE3_enabled") then { mission_ACE3_enabled = (isClass(configFile>>"CfgPatches">>"ACE_COMMON")) };
+
+if (isNil "mission_TFAR_enabled") then { mission_TFAR_enabled = (isClass(configFile>>"CfgPatches">>"task_force_radio")) };
+//if (isNil "mission_ACRE2_enabled") then { mission_ACRE2_enabled = (isClass(configFile>>"CfgPatches">>"acre_api")) };
+
 // ============================================================================
 //         Initializes all playable units whether they exist or not.           |
 // ============================================================================
 
 if(isNil"blu_0_0_1")then{blu_0_0_1=objNull}; if(isNil"blu_0_0_2")then{blu_0_0_2=objNull}; if(isNil"blu_0_0_3")then{blu_0_0_3=objNull};
 
-if(isNil"blu_1_0_1")then{blu_1_0_1=objNull}; if(isNil"blu_1_0_2")then{blu_1_0_2=objNull}; 
+if(isNil"blu_1_0_1")then{blu_1_0_1=objNull}; if(isNil"blu_1_0_2")then{blu_1_0_2=objNull};
 if(isNil"blu_1_0_3")then{blu_1_0_3=objNull}; if(isNil"blu_1_0_4")then{blu_1_0_4=objNull};
 if(isNil"blu_1_0_5")then{blu_1_0_5=objNull}; if(isNil"blu_1_0_6")then{blu_1_0_6=objNull};
 if(isNil"blu_1_1_1")then{blu_1_1_1=objNull}; if(isNil"blu_1_1_2")then{blu_1_1_2=objNull};
@@ -75,7 +80,7 @@ if(isNil"blu_1_1_3")then{blu_1_1_3=objNull}; if(isNil"blu_1_1_4")then{blu_1_1_4=
 if(isNil"blu_1_2_1")then{blu_1_2_1=objNull}; if(isNil"blu_1_2_2")then{blu_1_2_2=objNull};
 if(isNil"blu_1_2_3")then{blu_1_2_3=objNull}; if(isNil"blu_1_2_4")then{blu_1_2_4=objNull};
 
-if(isNil"blu_2_0_1")then{blu_2_0_1=objNull}; if(isNil"blu_2_0_2")then{blu_2_0_2=objNull}; 
+if(isNil"blu_2_0_1")then{blu_2_0_1=objNull}; if(isNil"blu_2_0_2")then{blu_2_0_2=objNull};
 if(isNil"blu_2_0_3")then{blu_2_0_3=objNull}; if(isNil"blu_2_0_4")then{blu_2_0_4=objNull};
 if(isNil"blu_2_0_5")then{blu_2_0_5=objNull}; if(isNil"blu_2_0_6")then{blu_2_0_6=objNull};
 if(isNil"blu_2_1_1")then{blu_2_1_1=objNull}; if(isNil"blu_2_1_2")then{blu_2_1_2=objNull};
@@ -83,7 +88,7 @@ if(isNil"blu_2_1_3")then{blu_2_1_3=objNull}; if(isNil"blu_2_1_4")then{blu_2_1_4=
 if(isNil"blu_2_2_1")then{blu_2_2_1=objNull}; if(isNil"blu_2_2_2")then{blu_2_2_2=objNull};
 if(isNil"blu_2_2_3")then{blu_2_2_3=objNull}; if(isNil"blu_2_2_4")then{blu_2_2_4=objNull};
 
-if(isNil"blu_3_0_1")then{blu_3_0_1=objNull}; if(isNil"blu_3_0_2")then{blu_3_0_2=objNull}; 
+if(isNil"blu_3_0_1")then{blu_3_0_1=objNull}; if(isNil"blu_3_0_2")then{blu_3_0_2=objNull};
 if(isNil"blu_3_0_3")then{blu_3_0_3=objNull}; if(isNil"blu_3_0_4")then{blu_3_0_4=objNull};
 if(isNil"blu_3_0_5")then{blu_3_0_5=objNull}; if(isNil"blu_3_0_6")then{blu_3_0_6=objNull};
 if(isNil"blu_3_1_1")then{blu_3_1_1=objNull}; if(isNil"blu_3_1_2")then{blu_3_1_2=objNull};
@@ -91,7 +96,7 @@ if(isNil"blu_3_1_3")then{blu_3_1_3=objNull}; if(isNil"blu_3_1_4")then{blu_3_1_4=
 if(isNil"blu_3_2_1")then{blu_3_2_1=objNull}; if(isNil"blu_3_2_2")then{blu_3_2_2=objNull};
 if(isNil"blu_3_2_3")then{blu_3_2_3=objNull}; if(isNil"blu_3_2_4")then{blu_3_2_4=objNull};
 
-if(isNil"blu_4_0_1")then{blu_4_0_1=objNull}; if(isNil"blu_4_0_2")then{blu_4_0_2=objNull}; 
+if(isNil"blu_4_0_1")then{blu_4_0_1=objNull}; if(isNil"blu_4_0_2")then{blu_4_0_2=objNull};
 if(isNil"blu_4_0_3")then{blu_4_0_3=objNull}; if(isNil"blu_4_0_4")then{blu_4_0_4=objNull};
 if(isNil"blu_4_0_5")then{blu_4_0_5=objNull}; if(isNil"blu_4_0_6")then{blu_4_0_6=objNull};
 if(isNil"blu_4_1_1")then{blu_4_1_1=objNull}; if(isNil"blu_4_1_2")then{blu_4_1_2=objNull};
@@ -99,16 +104,16 @@ if(isNil"blu_4_1_3")then{blu_4_1_3=objNull}; if(isNil"blu_4_1_4")then{blu_4_1_4=
 if(isNil"blu_4_2_1")then{blu_4_2_1=objNull}; if(isNil"blu_4_2_2")then{blu_4_2_2=objNull};
 if(isNil"blu_4_2_3")then{blu_4_2_3=objNull}; if(isNil"blu_4_2_4")then{blu_4_2_4=objNull};
 
-if(isNil"blu_5_0_1")then{blu_5_0_1=objNull}; if(isNil"blu_5_0_2")then{blu_5_0_2=objNull}; 
+if(isNil"blu_5_0_1")then{blu_5_0_1=objNull}; if(isNil"blu_5_0_2")then{blu_5_0_2=objNull};
 if(isNil"blu_5_0_3")then{blu_5_0_3=objNull}; if(isNil"blu_5_0_4")then{blu_5_0_4=objNull};
 
-if(isNil"blu_6_0_1")then{blu_6_0_1=objNull}; if(isNil"blu_6_0_2")then{blu_6_0_2=objNull}; 
+if(isNil"blu_6_0_1")then{blu_6_0_1=objNull}; if(isNil"blu_6_0_2")then{blu_6_0_2=objNull};
 if(isNil"blu_6_0_3")then{blu_6_0_3=objNull}; if(isNil"blu_6_0_4")then{blu_6_0_4=objNull};
 
-if(isNil"blu_7_0_1")then{blu_7_0_1=objNull}; if(isNil"blu_7_0_2")then{blu_7_0_2=objNull}; 
+if(isNil"blu_7_0_1")then{blu_7_0_1=objNull}; if(isNil"blu_7_0_2")then{blu_7_0_2=objNull};
 if(isNil"blu_7_0_3")then{blu_7_0_3=objNull}; if(isNil"blu_7_0_4")then{blu_7_0_4=objNull};
 
-if(isNil"blu_8_0_1")then{blu_8_0_1=objNull}; if(isNil"blu_8_0_2")then{blu_8_0_2=objNull}; 
+if(isNil"blu_8_0_1")then{blu_8_0_1=objNull}; if(isNil"blu_8_0_2")then{blu_8_0_2=objNull};
 if(isNil"blu_8_0_3")then{blu_8_0_3=objNull};
 
 if(isNil"blu_9_0_1")then{blu_9_0_1=objNull}; if(isNil"blu_9_0_2")then{blu_9_0_2=objNull};
@@ -119,7 +124,7 @@ if(isNil"blu_10_0_3")then{blu_10_0_3=objNull}; if(isNil"blu_10_0_4")then{blu_10_
 
 if(isNil"op_0_0_1")then{op_0_0_1=objNull}; if(isNil"op_0_0_2")then{op_0_0_2=objNull}; if(isNil"op_0_0_3")then{op_0_0_3=objNull};
 
-if(isNil"op_1_0_1")then{op_1_0_1=objNull}; if(isNil"op_1_0_2")then{op_1_0_2=objNull}; 
+if(isNil"op_1_0_1")then{op_1_0_1=objNull}; if(isNil"op_1_0_2")then{op_1_0_2=objNull};
 if(isNil"op_1_0_3")then{op_1_0_3=objNull}; if(isNil"op_1_0_4")then{op_1_0_4=objNull};
 if(isNil"op_1_0_5")then{op_1_0_5=objNull}; if(isNil"op_1_0_6")then{op_1_0_6=objNull};
 if(isNil"op_1_1_1")then{op_1_1_1=objNull}; if(isNil"op_1_1_2")then{op_1_1_2=objNull};
@@ -127,7 +132,7 @@ if(isNil"op_1_1_3")then{op_1_1_3=objNull}; if(isNil"op_1_1_4")then{op_1_1_4=objN
 if(isNil"op_1_2_1")then{op_1_2_1=objNull}; if(isNil"op_1_2_2")then{op_1_2_2=objNull};
 if(isNil"op_1_2_3")then{op_1_2_3=objNull}; if(isNil"op_1_2_4")then{op_1_2_4=objNull};
 
-if(isNil"op_2_0_1")then{op_2_0_1=objNull}; if(isNil"op_2_0_2")then{op_2_0_2=objNull}; 
+if(isNil"op_2_0_1")then{op_2_0_1=objNull}; if(isNil"op_2_0_2")then{op_2_0_2=objNull};
 if(isNil"op_2_0_3")then{op_2_0_3=objNull}; if(isNil"op_2_0_4")then{op_2_0_4=objNull};
 if(isNil"op_2_0_5")then{op_2_0_5=objNull}; if(isNil"op_2_0_6")then{op_2_0_6=objNull};
 if(isNil"op_2_1_1")then{op_2_1_1=objNull}; if(isNil"op_2_1_2")then{op_2_1_2=objNull};
@@ -135,7 +140,7 @@ if(isNil"op_2_1_3")then{op_2_1_3=objNull}; if(isNil"op_2_1_4")then{op_2_1_4=objN
 if(isNil"op_2_2_1")then{op_2_2_1=objNull}; if(isNil"op_2_2_2")then{op_2_2_2=objNull};
 if(isNil"op_2_2_3")then{op_2_2_3=objNull}; if(isNil"op_2_2_4")then{op_2_2_4=objNull};
 
-if(isNil"op_3_0_1")then{op_3_0_1=objNull}; if(isNil"op_3_0_2")then{op_3_0_2=objNull}; 
+if(isNil"op_3_0_1")then{op_3_0_1=objNull}; if(isNil"op_3_0_2")then{op_3_0_2=objNull};
 if(isNil"op_3_0_3")then{op_3_0_3=objNull}; if(isNil"op_3_0_4")then{op_3_0_4=objNull};
 if(isNil"op_3_0_5")then{op_3_0_5=objNull}; if(isNil"op_3_0_6")then{op_3_0_6=objNull};
 if(isNil"op_3_1_1")then{op_3_1_1=objNull}; if(isNil"op_3_1_2")then{op_3_1_2=objNull};
@@ -143,7 +148,7 @@ if(isNil"op_3_1_3")then{op_3_1_3=objNull}; if(isNil"op_3_1_4")then{op_3_1_4=objN
 if(isNil"op_3_2_1")then{op_3_2_1=objNull}; if(isNil"op_3_2_2")then{op_3_2_2=objNull};
 if(isNil"op_3_2_3")then{op_3_2_3=objNull}; if(isNil"op_3_2_4")then{op_3_2_4=objNull};
 
-if(isNil"op_4_0_1")then{op_4_0_1=objNull}; if(isNil"op_4_0_2")then{op_4_0_2=objNull}; 
+if(isNil"op_4_0_1")then{op_4_0_1=objNull}; if(isNil"op_4_0_2")then{op_4_0_2=objNull};
 if(isNil"op_4_0_3")then{op_4_0_3=objNull}; if(isNil"op_4_0_4")then{op_4_0_4=objNull};
 if(isNil"op_4_0_5")then{op_4_0_5=objNull}; if(isNil"op_4_0_6")then{op_4_0_6=objNull};
 if(isNil"op_4_1_1")then{op_4_1_1=objNull}; if(isNil"op_4_1_2")then{op_4_1_2=objNull};
@@ -151,16 +156,16 @@ if(isNil"op_4_1_3")then{op_4_1_3=objNull}; if(isNil"op_4_1_4")then{op_4_1_4=objN
 if(isNil"op_4_2_1")then{op_4_2_1=objNull}; if(isNil"op_4_2_2")then{op_4_2_2=objNull};
 if(isNil"op_4_2_3")then{op_4_2_3=objNull}; if(isNil"op_4_2_4")then{op_4_2_4=objNull};
 
-if(isNil"op_5_0_1")then{op_5_0_1=objNull}; if(isNil"op_5_0_2")then{op_5_0_2=objNull}; 
+if(isNil"op_5_0_1")then{op_5_0_1=objNull}; if(isNil"op_5_0_2")then{op_5_0_2=objNull};
 if(isNil"op_5_0_3")then{op_5_0_3=objNull}; if(isNil"op_5_0_4")then{op_5_0_4=objNull};
 
-if(isNil"op_6_0_1")then{op_6_0_1=objNull}; if(isNil"op_6_0_2")then{op_6_0_2=objNull}; 
+if(isNil"op_6_0_1")then{op_6_0_1=objNull}; if(isNil"op_6_0_2")then{op_6_0_2=objNull};
 if(isNil"op_6_0_3")then{op_6_0_3=objNull}; if(isNil"op_6_0_4")then{op_6_0_4=objNull};
 
-if(isNil"op_7_0_1")then{op_7_0_1=objNull}; if(isNil"op_7_0_2")then{op_7_0_2=objNull}; 
+if(isNil"op_7_0_1")then{op_7_0_1=objNull}; if(isNil"op_7_0_2")then{op_7_0_2=objNull};
 if(isNil"op_7_0_3")then{op_7_0_3=objNull}; if(isNil"op_7_0_4")then{op_7_0_4=objNull};
 
-if(isNil"op_8_0_1")then{op_8_0_1=objNull}; if(isNil"op_8_0_2")then{op_8_0_2=objNull}; 
+if(isNil"op_8_0_1")then{op_8_0_1=objNull}; if(isNil"op_8_0_2")then{op_8_0_2=objNull};
 if(isNil"op_8_0_3")then{op_8_0_3=objNull};
 
 if(isNil"op_9_0_1")then{op_9_0_1=objNull}; if(isNil"op_9_0_2")then{op_9_0_2=objNull};
@@ -171,7 +176,7 @@ if(isNil"op_10_0_3")then{op_10_0_3=objNull}; if(isNil"op_10_0_4")then{op_10_0_4=
 
 if(isNil"ind_0_0_1")then{ind_0_0_1=objNull}; if(isNil"ind_0_0_2")then{ind_0_0_2=objNull}; if(isNil"ind_0_0_3")then{ind_0_0_3=objNull};
 
-if(isNil"ind_1_0_1")then{ind_1_0_1=objNull}; if(isNil"ind_1_0_2")then{ind_1_0_2=objNull}; 
+if(isNil"ind_1_0_1")then{ind_1_0_1=objNull}; if(isNil"ind_1_0_2")then{ind_1_0_2=objNull};
 if(isNil"ind_1_0_3")then{ind_1_0_3=objNull}; if(isNil"ind_1_0_4")then{ind_1_0_4=objNull};
 if(isNil"ind_1_0_5")then{ind_1_0_5=objNull}; if(isNil"ind_1_0_6")then{ind_1_0_6=objNull};
 if(isNil"ind_1_1_1")then{ind_1_1_1=objNull}; if(isNil"ind_1_1_2")then{ind_1_1_2=objNull};
@@ -179,7 +184,7 @@ if(isNil"ind_1_1_3")then{ind_1_1_3=objNull}; if(isNil"ind_1_1_4")then{ind_1_1_4=
 if(isNil"ind_1_2_1")then{ind_1_2_1=objNull}; if(isNil"ind_1_2_2")then{ind_1_2_2=objNull};
 if(isNil"ind_1_2_3")then{ind_1_2_3=objNull}; if(isNil"ind_1_2_4")then{ind_1_2_4=objNull};
 
-if(isNil"ind_2_0_1")then{ind_2_0_1=objNull}; if(isNil"ind_2_0_2")then{ind_2_0_2=objNull}; 
+if(isNil"ind_2_0_1")then{ind_2_0_1=objNull}; if(isNil"ind_2_0_2")then{ind_2_0_2=objNull};
 if(isNil"ind_2_0_3")then{ind_2_0_3=objNull}; if(isNil"ind_2_0_4")then{ind_2_0_4=objNull};
 if(isNil"ind_2_0_5")then{ind_2_0_5=objNull}; if(isNil"ind_2_0_6")then{ind_2_0_6=objNull};
 if(isNil"ind_2_1_1")then{ind_2_1_1=objNull}; if(isNil"ind_2_1_2")then{ind_2_1_2=objNull};
@@ -187,7 +192,7 @@ if(isNil"ind_2_1_3")then{ind_2_1_3=objNull}; if(isNil"ind_2_1_4")then{ind_2_1_4=
 if(isNil"ind_2_2_1")then{ind_2_2_1=objNull}; if(isNil"ind_2_2_2")then{ind_2_2_2=objNull};
 if(isNil"ind_2_2_3")then{ind_2_2_3=objNull}; if(isNil"ind_2_2_4")then{ind_2_2_4=objNull};
 
-if(isNil"ind_3_0_1")then{ind_3_0_1=objNull}; if(isNil"ind_3_0_2")then{ind_3_0_2=objNull}; 
+if(isNil"ind_3_0_1")then{ind_3_0_1=objNull}; if(isNil"ind_3_0_2")then{ind_3_0_2=objNull};
 if(isNil"ind_3_0_3")then{ind_3_0_3=objNull}; if(isNil"ind_3_0_4")then{ind_3_0_4=objNull};
 if(isNil"ind_3_0_5")then{ind_3_0_5=objNull}; if(isNil"ind_3_0_6")then{ind_3_0_6=objNull};
 if(isNil"ind_3_1_1")then{ind_3_1_1=objNull}; if(isNil"ind_3_1_2")then{ind_3_1_2=objNull};
@@ -195,7 +200,7 @@ if(isNil"ind_3_1_3")then{ind_3_1_3=objNull}; if(isNil"ind_3_1_4")then{ind_3_1_4=
 if(isNil"ind_3_2_1")then{ind_3_2_1=objNull}; if(isNil"ind_3_2_2")then{ind_3_2_2=objNull};
 if(isNil"ind_3_2_3")then{ind_3_2_3=objNull}; if(isNil"ind_3_2_4")then{ind_3_2_4=objNull};
 
-if(isNil"ind_4_0_1")then{ind_4_0_1=objNull}; if(isNil"ind_4_0_2")then{ind_4_0_2=objNull}; 
+if(isNil"ind_4_0_1")then{ind_4_0_1=objNull}; if(isNil"ind_4_0_2")then{ind_4_0_2=objNull};
 if(isNil"ind_4_0_3")then{ind_4_0_3=objNull}; if(isNil"ind_4_0_4")then{ind_4_0_4=objNull};
 if(isNil"ind_4_0_5")then{ind_4_0_5=objNull}; if(isNil"ind_4_0_6")then{ind_4_0_6=objNull};
 if(isNil"ind_4_1_1")then{ind_4_1_1=objNull}; if(isNil"ind_4_1_2")then{ind_4_1_2=objNull};
@@ -203,16 +208,16 @@ if(isNil"ind_4_1_3")then{ind_4_1_3=objNull}; if(isNil"ind_4_1_4")then{ind_4_1_4=
 if(isNil"ind_4_2_1")then{ind_4_2_1=objNull}; if(isNil"ind_4_2_2")then{ind_4_2_2=objNull};
 if(isNil"ind_4_2_3")then{ind_4_2_3=objNull}; if(isNil"ind_4_2_4")then{ind_4_2_4=objNull};
 
-if(isNil"ind_5_0_1")then{ind_5_0_1=objNull}; if(isNil"ind_5_0_2")then{ind_5_0_2=objNull}; 
+if(isNil"ind_5_0_1")then{ind_5_0_1=objNull}; if(isNil"ind_5_0_2")then{ind_5_0_2=objNull};
 if(isNil"ind_5_0_3")then{ind_5_0_3=objNull}; if(isNil"ind_5_0_4")then{ind_5_0_4=objNull};
 
-if(isNil"ind_6_0_1")then{ind_6_0_1=objNull}; if(isNil"ind_6_0_2")then{ind_6_0_2=objNull}; 
+if(isNil"ind_6_0_1")then{ind_6_0_1=objNull}; if(isNil"ind_6_0_2")then{ind_6_0_2=objNull};
 if(isNil"ind_6_0_3")then{ind_6_0_3=objNull}; if(isNil"ind_6_0_4")then{ind_6_0_4=objNull};
 
-if(isNil"ind_7_0_1")then{ind_7_0_1=objNull}; if(isNil"ind_7_0_2")then{ind_7_0_2=objNull}; 
+if(isNil"ind_7_0_1")then{ind_7_0_1=objNull}; if(isNil"ind_7_0_2")then{ind_7_0_2=objNull};
 if(isNil"ind_7_0_3")then{ind_7_0_3=objNull}; if(isNil"ind_7_0_4")then{ind_7_0_4=objNull};
 
-if(isNil"ind_8_0_1")then{ind_8_0_1=objNull}; if(isNil"ind_8_0_2")then{ind_8_0_2=objNull}; 
+if(isNil"ind_8_0_1")then{ind_8_0_1=objNull}; if(isNil"ind_8_0_2")then{ind_8_0_2=objNull};
 if(isNil"ind_8_0_3")then{ind_8_0_3=objNull};
 
 if(isNil"ind_9_0_1")then{ind_9_0_1=objNull}; if(isNil"ind_9_0_2")then{ind_9_0_2=objNull};
@@ -225,31 +230,31 @@ if(isNil"ind_10_0_3")then{ind_10_0_3=objNull}; if(isNil"ind_10_0_4")then{ind_10_
 //          Initializes all possible groups whether they exist or not.         |
 // ============================================================================
 
-if(isNil"blu_0_0")then{blu_0_0=grpNull}; 
+if(isNil"blu_0_0")then{blu_0_0=grpNull};
 if(isNil"blu_1_0")then{blu_1_0=grpNull}; if(isNil"blu_1_1")then{blu_1_1=grpNull}; if(isNil"blu_1_2")then{blu_1_2=grpNull};
 if(isNil"blu_2_0")then{blu_2_0=grpNull}; if(isNil"blu_2_1")then{blu_2_1=grpNull}; if(isNil"blu_2_2")then{blu_2_2=grpNull};
 if(isNil"blu_3_0")then{blu_3_0=grpNull}; if(isNil"blu_3_1")then{blu_3_1=grpNull}; if(isNil"blu_3_2")then{blu_3_2=grpNull};
 if(isNil"blu_4_0")then{blu_4_0=grpNull}; if(isNil"blu_4_1")then{blu_4_1=grpNull}; if(isNil"blu_4_2")then{blu_4_2=grpNull};
 
-if(isNil"blu_5_0")then{blu_0_0=grpNull}; if(isNil"blu_6_0")then{blu_6_0=grpNull}; if(isNil"blu_7_0")then{blu_7_0=grpNull};
-if(isNil"blu_8_0")then{blu_8_0=grpNull}; if(isNil"blu_9_0")then{blu_9_0=grpNull}; if(isNil"blu_10_0")then{blu_10_1=grpNull};
+if(isNil"blu_5_0")then{blu_5_0=grpNull}; if(isNil"blu_6_0")then{blu_6_0=grpNull}; if(isNil"blu_7_0")then{blu_7_0=grpNull};
+if(isNil"blu_8_0")then{blu_8_0=grpNull}; if(isNil"blu_9_0")then{blu_9_0=grpNull}; if(isNil"blu_10_0")then{blu_10_0=grpNull};
 
-if(isNil"op_0_0")then{op_0_0=grpNull}; 
+if(isNil"op_0_0")then{op_0_0=grpNull};
 if(isNil"op_1_0")then{op_1_0=grpNull}; if(isNil"op_1_1")then{op_1_1=grpNull}; if(isNil"op_1_2")then{op_1_2=grpNull};
 if(isNil"op_2_0")then{op_2_0=grpNull}; if(isNil"op_2_1")then{op_2_1=grpNull}; if(isNil"op_2_2")then{op_2_2=grpNull};
 if(isNil"op_3_0")then{op_3_0=grpNull}; if(isNil"op_3_1")then{op_3_1=grpNull}; if(isNil"op_3_2")then{op_3_2=grpNull};
 if(isNil"op_4_0")then{op_4_0=grpNull}; if(isNil"op_4_1")then{op_4_1=grpNull}; if(isNil"op_4_2")then{op_4_2=grpNull};
 
-if(isNil"op_5_0")then{op_0_0=grpNull}; if(isNil"op_6_0")then{op_6_0=grpNull}; if(isNil"op_7_0")then{op_7_0=grpNull};
-if(isNil"op_8_0")then{op_8_0=grpNull}; if(isNil"op_9_0")then{op_9_0=grpNull}; if(isNil"op_10_0")then{op_10_1=grpNull};
+if(isNil"op_5_0")then{op_5_0=grpNull}; if(isNil"op_6_0")then{op_6_0=grpNull}; if(isNil"op_7_0")then{op_7_0=grpNull};
+if(isNil"op_8_0")then{op_8_0=grpNull}; if(isNil"op_9_0")then{op_9_0=grpNull}; if(isNil"op_10_0")then{op_10_0=grpNull};
 
-if(isNil"ind_0_0")then{ind_0_0=grpNull}; 
+if(isNil"ind_0_0")then{ind_0_0=grpNull};
 if(isNil"ind_1_0")then{ind_1_0=grpNull}; if(isNil"ind_1_1")then{ind_1_1=grpNull}; if(isNil"ind_1_2")then{ind_1_2=grpNull};
 if(isNil"ind_2_0")then{ind_2_0=grpNull}; if(isNil"ind_2_1")then{ind_2_1=grpNull}; if(isNil"ind_2_2")then{ind_2_2=grpNull};
 if(isNil"ind_3_0")then{ind_3_0=grpNull}; if(isNil"ind_3_1")then{ind_3_1=grpNull}; if(isNil"ind_3_2")then{ind_3_2=grpNull};
 if(isNil"ind_4_0")then{ind_4_0=grpNull}; if(isNil"ind_4_1")then{ind_4_1=grpNull}; if(isNil"ind_4_2")then{ind_4_2=grpNull};
 
-if(isNil"ind_5_0")then{ind_0_0=grpNull}; if(isNil"ind_6_0")then{ind_6_0=grpNull}; if(isNil"ind_7_0")then{ind_7_0=grpNull};
-if(isNil"ind_8_0")then{ind_8_0=grpNull}; if(isNil"ind_9_0")then{ind_9_0=grpNull}; if(isNil"ind_10_0")then{ind_10_1=grpNull};
+if(isNil"ind_5_0")then{ind_5_0=grpNull}; if(isNil"ind_6_0")then{ind_6_0=grpNull}; if(isNil"ind_7_0")then{ind_7_0=grpNull};
+if(isNil"ind_8_0")then{ind_8_0=grpNull}; if(isNil"ind_9_0")then{ind_9_0=grpNull}; if(isNil"ind_10_0")then{ind_10_0=grpNull};
 
 // =============================================================================

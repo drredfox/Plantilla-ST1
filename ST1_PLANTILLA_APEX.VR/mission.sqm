@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1579.1937,49.333588,1263.8018};
-		dir[]={-0.64046836,-0.58749646,0.49463344};
-		up[]={-0.46497548,0.80922592,0.35910022};
-		aside[]={0.61124021,-1.3924728e-007,0.7914539};
+		pos[]={1494.4167,9.2351665,1311.465};
+		dir[]={-0.75854558,-0.62686282,0.17795405};
+		up[]={-0.61029631,0.77912843,0.14317457};
+		aside[]={0.22840022,-1.1413067e-007,0.973575};
 	};
 };
 binarizationWanted=0;
@@ -408,7 +408,7 @@ class Mission
 					{
 						skill=1;
 						rank="CORPORAL";
-						init="this setVariable [""unitInit"",[""yellow"",""*"",""MEDIC"",""*""], true];";
+						init="this setVariable [""unitInit"",[""yellow"",""*"",""*"",""*""], true];";
 						name="blu_0_0_2";
 						description="Mando 2 - Medico";
 						isPlayable=1;

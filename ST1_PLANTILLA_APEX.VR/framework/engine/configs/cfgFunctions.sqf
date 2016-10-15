@@ -14,7 +14,6 @@ class BRM {
     class init {
         file = "framework\engine\functions\engine\init";
         class doLog{};
-        class setParams{preInit = 1;};
         class loadSettings{preInit = 1;};
         class initVariables{preInit = 1;};
         class engine_pre{preInit = 1;};
