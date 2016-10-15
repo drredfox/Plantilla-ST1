@@ -1,6 +1,6 @@
 if (!hasinterface) exitWith {};
 
-[] spawn {
+0 spawn {
 
 	waitUntil {time > 10}; // Let TFAR init properly
 

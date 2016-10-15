@@ -3,7 +3,6 @@ if !(hasInterface) exitWith {};
 0 spawn {
 if (isNull player) then {waitUntil{!isNull player}};
 
-waitUntil{!isNil "mission_groups_init"};
 waitUntil{(mission_groups_init)};
 
 private ["_orbatText", "_groups"];
@@ -26,7 +25,7 @@ _orbatText = "<font size='18'>ST1</font><br/><font size='16'>Fuerzas Desplegadas
     } forEach units _x;
     if (!isMultiplayer) then { _checkin = true };
     if (_checkin) then {
-	
+
 		_ST1_Group = [groupID (_x)," "] call BIS_fnc_splitstring;
         _ST1_GroupID = (_ST1_Group) select 0;
 		_leader = [str(leader _x),"_"] call BIS_fnc_splitstring;

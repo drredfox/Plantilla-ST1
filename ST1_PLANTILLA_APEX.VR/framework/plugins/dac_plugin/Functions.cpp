@@ -3,7 +3,6 @@ class BRM_DAC {
 		file = "framework\plugins\dac_plugin\functions";
 		class preinit {preInit = 1;};
 		class postinit {postInit = 1;};
-		class setParams {postInit = 1;};
 	};
 	class Functions {
 		file = "framework\plugins\dac_plugin\functions";
@@ -16,4 +15,4 @@ class BRM_DAC {
 		class createZone {};
 		class initVehicleCrew {};
 	};
-}; 
+};

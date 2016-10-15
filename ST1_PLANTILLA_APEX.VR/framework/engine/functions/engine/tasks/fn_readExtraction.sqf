@@ -3,7 +3,7 @@
 
 NAME:
     BRM_fnc_readExtraction
-    
+
 AUTHOR(s):
     Nife
 
@@ -12,10 +12,10 @@ DESCRIPTION:
 
 PARAMETERS:
     None.
-    
+
 USAGE:
     [] call BRM_fnc_readExtraction
-    
+
 RETURNS:
     Nothing.
 
@@ -23,8 +23,6 @@ RETURNS:
 */
 
 if (!isServer) exitWith {};
-
-extraction_points_all = nearestObjects [[0,0,0], ["LocationEvacPoint_F"], 300000];
 
 extraction_points_blu = [];
 extraction_points_op = [];
@@ -55,19 +53,6 @@ switch (side_c_side) do {
 extraction_a = [];
 extraction_b = [];
 extraction_c = [];
-
-{
-    _extName = [str(_x), "_"] call CBA_fnc_split;
-    _name = (_extName select 0);
-    
-    switch (_name) do {
-        case "blu": { extraction_points_blu pushBack _x };
-        case "op": { extraction_points_op pushBack _x };
-        case "ind": { extraction_points_ind pushBack _x };
-        case "civ": { extraction_points_civ pushBack _x };
-    };
-    
-} forEach extraction_points_all;
 
 switch (side_a_side) do {
     case WEST: { extraction_a pushBack mission_extraction_BLU; extraction_a pushBack extraction_points_blu };

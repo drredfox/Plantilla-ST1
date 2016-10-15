@@ -50,7 +50,7 @@ _captive setBehaviour "Careless"; // Set Behaviour to Careless because, you know
 							(_this select 0) setBehaviour "SAFE";
 							[(_this select 0)] joinSilent player;
 							[(_this select 0),(_this select 2)] remoteExec ["bis_fnc_holdActionRemove",[0,-2] select isDedicated,true];
-							RescueCompleted=true;publicvariable "RescueCompleted"
+							RescueCompleted = true; publicvariable "RescueCompleted";
 						},
 /* 9 code executed on interruption */       {
 						_intrMessage = selectRandom ["¡No me dejéis aquí!","¡Eh, no te vayas!","¡Me matarán si me dejas aquí!","Joder, joder, joder..."];

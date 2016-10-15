@@ -21,8 +21,8 @@ USAGE:
 #include "team_roster\main.cpp"         //ORBAT
 #include "tfar_plugin\main.cpp"         //Asigna frecuencias TFAR
 #include "map_cover\main.cpp"           //Marca AO en mapa
-#include "loading_screen\main.cpp"      //Pantalla inicial de espera
-#include "intros\main.cpp"              //Intros
+/*#include "loading_screen\main.cpp"      //Pantalla inicial de espera
+#include "intros\main.cpp"              //Intros*/
 #include "dac_plugin\main.cpp"          //Config DAC
 #include "f_evade_escape\main.cpp"      //Extracción al finalizar objetivos
 #include "f_casualties_cap\main.cpp"    //Finaliza misión si mueren todos los jugadores

@@ -3,8 +3,6 @@ if (!isMultiplayer) exitWith {};
 if (!isServer) exitWith {};
 if (mission_cas_cap == -1) exitWith {};
 
-0 spawn {
-    
 #include "includes\settings.sqf"
 
 private ["_casA","_casB","_casC"];
@@ -31,19 +29,15 @@ switch (side_c_side) do {
     case RESISTANCE: { _casC = casIND };
 };
 
-sleep 5;
+if (mission_game_mode == "tvt") then {
 
-if (mission_game_mode == "tvt") then {    
-    
     [_casA, mission_cas_cap, endings_tvt_auto] spawn f_cas_cap_fnc_CasualtiesCapCheck;
-        
+
     [_casB, mission_cas_cap, endings_tvt_auto] spawn f_cas_cap_fnc_CasualtiesCapCheck;
 
-    if (mission_enable_side_c) then {        
+    if (mission_enable_side_c) then {
         [_casC, mission_cas_cap, endings_tvt_auto] spawn f_cas_cap_fnc_CasualtiesCapCheck;
     };
 } else {
     [_casA, mission_cas_cap, endings_defeat] spawn f_cas_cap_fnc_CasualtiesCapCheck;
-};
-
 };
