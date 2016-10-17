@@ -34,8 +34,8 @@ if !(isPlayer _unit) then { removeGoggles _unit };
 
 // DETERMINE UNIT TYPE =========================================================
 
-if (!(isPlayer _unit)) then { _type = getText (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName") } 
-else { 
+if (!(isPlayer _unit)) then { _type = getText (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName") }
+else {
     if ( (count _this) > 2) then {
         _type = _this select 2;
     } else {
@@ -115,19 +115,19 @@ if (!isNil "_defaultName") then {
     _face = _this select 2;
     _name = _this select 3;
     _insignia = _this select 4;
-    
-    waitUntil{(time > 3)};
-    
-    if !(isPlayer _unit) then {
-        _unit setFace _face;
-        _unit setSpeaker _voice;
-        _unit setPitch ([0.85, 1.15] call BIS_fnc_randomNum);
-        if (_name != "default") then {
-            _unit setVariable ["ACE_Name", _name, true];
-            _unit setName _name;
-        };
-    };
-    if (_insignia != "none") then {
-        [_unit, _insignia] call BIS_fnc_setUnitInsignia;
-    };
+
+    [{(time > 3)}, {
+      if !(isPlayer _unit) then {
+          _unit setFace _face;
+          _unit setSpeaker _voice;
+          _unit setPitch ([0.85, 1.15] call BIS_fnc_randomNum);
+          if (_name != "default") then {
+              _unit setVariable ["ACE_Name", _name, true];
+              _unit setName _name;
+          };
+      };
+      if (_insignia != "none") then {
+          [_unit, _insignia] call BIS_fnc_setUnitInsignia;
+      };
+    }, []] call CBA_fnc_waitUntilAndExecute;
 }, [_unit, _doVoice, _doFace, _doFinalName, _defaultInsignia]] call CBA_fnc_globalExecute;

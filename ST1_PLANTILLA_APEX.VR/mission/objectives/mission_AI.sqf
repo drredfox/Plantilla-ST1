@@ -16,7 +16,7 @@
 	//DAC
 	if ("dac_plugin" in usedPlugins) then { [{(!isNil "BRM_DAC_fnc_new") && (time > 5)}, {
 		[trg1, "Create an activated normal default friendly zone named zone1 on network 1, with 1 group of infantry."] spawn BRM_DAC_fnc_new;
-
+		[c1, "Create 1 normal default friendly camp named random on network 1, with 1 respawns of infantry supporting zone1."] spawn BRM_DAC_fnc_new;
 		// /* ================================================
 
 		// EJEMPLOS DE ZONAS DAC

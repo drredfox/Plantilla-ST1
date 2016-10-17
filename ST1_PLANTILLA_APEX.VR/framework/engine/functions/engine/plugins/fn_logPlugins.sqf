@@ -28,8 +28,6 @@ framework_version = call compile preprocessFile "framework\version.txt";
 ENGINE_plugins = [];
 usedPlugins = [];
 
-plugins_loaded = false;
-
 for "_i" from 0 to ((count LOADED_PLUGINS) - 1) do {
     private ["_plugin"];
 
@@ -39,8 +37,6 @@ for "_i" from 0 to ((count LOADED_PLUGINS) - 1) do {
 
     ENGINE_plugins pushBack (LOADED_PLUGINS select _i);
 };
-
-plugins_loaded = true;
 
 FRAMEWORK_DIARY = "framework_diary";
 player createDiarySubject [FRAMEWORK_DIARY,"Framework"];

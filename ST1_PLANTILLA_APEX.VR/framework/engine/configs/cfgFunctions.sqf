@@ -38,6 +38,7 @@ class BRM {
     		class messageLog{};
     		class createInsertion{};
     		class createExtraction{};
+        class mountGroups{};
     };
     class ending {
         file = "framework\engine\functions\engine\ending";

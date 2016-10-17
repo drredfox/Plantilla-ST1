@@ -26,14 +26,14 @@ switch (_CampTyp) do {
 	{
             _loadout = "auto";
             _ammoBoxes = ["medical","ammo"];
-            
+
 		_campBasic     = ["FlagCarrierOPFOR_EP1",["FirePlace_burning_f",15,10,0],["Land_BagBunker_Tower_F",10,0,0],["Logic",10,15,0],0];
 		_campAmmo      = [["O_CargoNet_01_ammo_F",20,2,0],["O_CargoNet_01_ammo_F",20,0,0]];
 		_campStatic    = [["O_Mortar_01_F",-7,25,0,"O_Soldier_F"],["O_Mortar_01_F",25,25,0,"O_Soldier_F"],["O_Mortar_01_F",25,-20,180,"O_Soldier_F"],["O_Mortar_01_F",-7,-20,180,"O_Soldier_F"]];
 		_campAddUnit   = ["O_soldier_LAT_F","O_soldier_lite_F","O_soldier_TL_F","O_soldier_TL_F"];
 		_campUserObj   = [];
 		_campRandomObj = [];
-		_campWall      = ["FenceWood",[-2,35],[40,40,1],[7,0,0,4],[1,0.1],[1,90]];
+		_campWall      = ["FenceWood",[-2,35],[40,40,1],[7,0,0,4],[1,0.1],[0,90]];
 		_campObjInit   = [[],[format ["[0, { [(_this select 0), 'opfor', (_this select 1)] spawn BRM_fnc_assignCargo }, [_x, %1]] call CBA_fnc_globalExecute", _ammoBoxes]],["campObjsSTATIC pushBack [_x, '"+_loadout+"']"],[_loadout call _init],[],[],[]];
 	};
 //-------------------------------------------------------------------------------------------------------------------------
@@ -41,14 +41,14 @@ switch (_CampTyp) do {
 	{
             _loadout = "auto";
             _ammoBoxes = ["medical","ammo"];
-            
+
 		_campBasic     = ["FlagCarrierBLUFOR_EP1",["FirePlace_burning_f",15,10,0],["Land_BagBunker_Tower_F",10,0,0],["Logic",10,15,0],0];
 		_campAmmo      = [["B_CargoNet_01_ammo_F",20,2,0],["B_CargoNet_01_ammo_F",20,0,0]];
 		_campStatic    = [["B_Mortar_01_F",-7,25,0,"B_Soldier_F"],["B_Mortar_01_F",25,25,0,"B_Soldier_F"],["B_Mortar_01_F",25,-20,180,"B_Soldier_F"],["B_Mortar_01_F",-7,-20,180,"B_Soldier_F"]];
 		_campAddUnit   = ["B_soldier_LAT_F","B_soldier_lite_F","B_soldier_TL_F","B_soldier_TL_F"];
 		_campUserObj   = [];
 		_campRandomObj = [];
-		_campWall      = ["FenceWood",[-2,35],[40,40,1],[7,0,0,4],[1,0.1],[1,90]];
+		_campWall      = ["FenceWood",[-2,35],[40,40,1],[7,0,0,4],[1,0.1],[0,90]];
 		_campObjInit   = [[],[format ["[0, { [(_this select 0), 'blufor', (_this select 1)] spawn BRM_fnc_assignCargo }, [_x, %1]] call CBA_fnc_globalExecute", _ammoBoxes]],["campObjsSTATIC pushBack [_x, '"+_loadout+"']"],[_loadout call _init],[],[],[]];
 	};
 //-------------------------------------------------------------------------------------------------------------------------
@@ -56,16 +56,16 @@ switch (_CampTyp) do {
 	{
             _loadout = "auto";
             _ammoBoxes = ["medical","ammo"];
-            
+
 		_campBasic     = ["FlagCarrierINDFOR_EP1",["FirePlace_burning_f",15,10,0],["Land_BagBunker_Tower_F",10,0,0],["Logic",10,15,0],0];
 		_campAmmo      = [["I_CargoNet_01_ammo_F",20,2,0],["I_CargoNet_01_ammo_F",20,0,0]];
 		_campStatic    = [["I_Mortar_01_F",-7,25,0,"I_Soldier_F"],["I_Mortar_01_F",25,25,0,"I_Soldier_F"],["I_Mortar_01_F",25,-20,180,"I_Soldier_F"],["I_Mortar_01_F",-7,-20,180,"I_Soldier_F"]];
 		_campAddUnit   = ["I_soldier_LAT_F","I_soldier_lite_F","I_soldier_TL_F","I_soldier_TL_F"];
 		_campUserObj   = [];
 		_campRandomObj = [];
-		_campWall      = ["FenceWood",[-2,35],[40,40,1],[7,0,0,4],[1,0.1],[1,90]];
+		_campWall      = ["FenceWood",[-2,35],[40,40,1],[7,0,0,4],[1,0.1],[0,90]];
 		_campObjInit   = [[],[format ["[0, { [(_this select 0), 'indfor', (_this select 1)] spawn BRM_fnc_assignCargo }, [_x, %1]] call CBA_fnc_globalExecute", _ammoBoxes]],["campObjsSTATIC pushBack [_x, '"+_loadout+"']"],[_loadout call _init],[],[],[]];
-	};        
+	};
 //-------------------------------------------------------------------------------------------------------------------------
 	default {
                     if(DAC_Basic_Value != 5) then
@@ -77,36 +77,28 @@ switch (_CampTyp) do {
                 };
 };
 
-[] spawn {
-    waitUntil{(DAC_Basic_Value == 1)};
-    
-    sleep 2;
-        
+[{(dac_basic_value == 1)}, {
+  [{
     if (count campObjsSTATIC > 0) then {
         {
             _object = (_x select 0);
-            _loadout = (_x select 1);        
+            _loadout = (_x select 1);
             _unit = gunner _object;
 
             [_unit, _loadout] spawn BRM_fnc_initAI;
 
         } forEach campObjsSTATIC;
-    };
-};
 
-[] spawn {
-    waitUntil{(DAC_Basic_Value == 1)};
-    
-    sleep 5;
-    
-    if (count campObjsUNITS > 0) then {
-        {
-            _unit = (_x select 0);
-            _loadout = (_x select 1);
-            { [_x, _loadout] call BRM_fnc_initAI } forEach units group _unit;
-        } forEach campObjsUNITS;
+				if (count campObjsUNITS > 0) then {
+						{
+								_unit = (_x select 0);
+								_loadout = (_x select 1);
+								{ [_x, _loadout] call BRM_fnc_initAI } forEach units group _unit;
+						} forEach campObjsUNITS;
+				};
     };
-};
+	}, [], 5] call CBA_fnc_waitAndExecute;
+}, []] call CBA_fnc_waitUntilAndExecute;
 
 _array = [_campBasic,_campAmmo,_campStatic,_campAddUnit,_campUserObj,_campRandomObj,_campWall,_campObjInit];
 _array

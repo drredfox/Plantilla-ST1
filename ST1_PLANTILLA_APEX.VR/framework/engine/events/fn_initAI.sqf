@@ -67,10 +67,10 @@ if (!_initialized) then {
 
     if (("civilian_casualty_cap" in usedPlugins)) then {
         if ((mission_dead_civilian_limit > -1)&&(side _unit == civilian)) then {
-            waitUntil{(!isNil"fnc_civFiredWeapon")&&(!isNil"fnc_countCivDeaths")};
-
-            _unit addEventHandler ["fired", fnc_civFiredWeapon];
-            _unit addMPEventHandler ["mpkilled", fnc_countCivDeaths];
+            [{(!isNil"fnc_civFiredWeapon") && (!isNil"fnc_countCivDeaths")}, {
+              _unit addEventHandler ["fired", fnc_civFiredWeapon];
+              _unit addMPEventHandler ["mpkilled", fnc_countCivDeaths];
+            }, _unit] call CBA_fnc_waitUntilAndExecute;
         };
     };
 
