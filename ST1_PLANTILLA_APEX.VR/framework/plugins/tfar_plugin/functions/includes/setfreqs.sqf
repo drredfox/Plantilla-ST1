@@ -3,7 +3,7 @@ if (!hasinterface) exitWith {};
 0 spawn {
 
 	waitUntil {time > 10}; // Let TFAR init properly
-
+	if (player_is_jip) then {sleep 10;};
 	_unit = [str(player),"_"] call BIS_fnc_splitstring;
     _i = parseNumber (_unit select 1);
 

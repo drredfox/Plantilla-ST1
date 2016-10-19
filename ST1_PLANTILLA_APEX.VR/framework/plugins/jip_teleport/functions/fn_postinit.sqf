@@ -2,12 +2,12 @@ if !(hasInterface) exitWith {};
 if !(player_is_jip) exitWith {};
 
 0 spawn {
-    
+private _time = time;
 Revive_TelepSquad = {
 	Private["_revive_Keypressed"];
 	if (alive player) then {
 		_revive_Keypressed = (findDisplay 46) displayAddEventHandler ["KeyUp","_this call Revive_Keypressedcode"];
-                cutText ["Pulsa ESPACIO durante los proximos 5 minutos para teletransportarte hasta tu equipo.","PLAIN DOWN",2];
+    cutText ["Pulsa ESPACIO durante los proximos 5 minutos para teletransportarte hasta tu equipo.","PLAIN DOWN",2];
 		Sleep 400;
 		(findDisplay 46) displayRemoveEventHandler ["KeyUp",_revive_Keypressed]
 	};
@@ -44,14 +44,14 @@ Revive_Keypressedcode = {
 			_tmposX=_tmpos select 0; _tmposY=_tmpos select 1; _tmposZ=_tmpos select 2;
 			_tmpos set[0,(_tmposX+ (random 2) -1)];
 			_tmpos set[1,(_tmposY+ (random 2) -1)];
-			
+
 			if (_tmposZ > 1) then {
-			
+
 				//Detect buildings
 				_tmposALT=_tmpos findEmptyPosition [1,30, typeof player];
 				if ((count _tmposALT) > 1) then {_tmpos=_tmposALT};
 			};
-			
+
                         _vehtg = (vehicle _target);
 
                         if (_vehtg == _target) then { player setPosATL _tmpos; _done = true } else {
@@ -61,9 +61,9 @@ Revive_Keypressedcode = {
                                 case (_vehtg emptyPositions "commander" > 0) : { player moveinCommander _vehtg; _done = true };
                                 case (_vehtg emptyPositions "gunner" > 0) : { player moveinGunner _vehtg; _done = true };
                                 case (_vehtg emptyPositions "cargo" > 0) : { player moveinCargo _vehtg; _done = true };
-                                case (_vehtg emptyPositions "cargo" == 0) : { 
+                                case (_vehtg emptyPositions "cargo" == 0) : {
                                     cutText ["You squad leader is in a full vehicle - wait for an empty seat.","PLAIN DOWN",2];
-                                    _done = false; 
+                                    _done = false;
                                 };
                             };
                         };
@@ -75,6 +75,7 @@ Revive_Keypressedcode = {
 	};
 	false;
 };
-
+    waitUntil {!isNull player};
+    sleep mission_init_time;
     [] spawn Revive_TelepSquad;
 };
