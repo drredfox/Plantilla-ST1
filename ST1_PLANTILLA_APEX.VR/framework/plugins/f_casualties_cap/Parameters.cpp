@@ -1,7 +1,7 @@
 class p_cas_cap
 {
 	title = "Casualty Cap";
-	values[] = {0,1,2,3,4};
+	values[] = {-1,80,90,95,100};
 	texts[] = {"Disabled","80%","90%","95%","100%"};
-	default = 4;
+	default = 100;
 };
