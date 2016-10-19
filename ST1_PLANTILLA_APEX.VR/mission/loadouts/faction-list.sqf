@@ -3,11 +3,11 @@ switch (toUpper(_faction)) do {
     case "ST1": {
         #include "factions\ST1.sqf"
     };
-	
+
 	case "ST1TROPIC": {
         #include "factions\ST1Tropic.sqf"
     };
-	
+
 	case "ST1CTRG": {
         #include "factions\ST1CTRG.sqf"
     };
@@ -23,7 +23,7 @@ switch (toUpper(_faction)) do {
     case "MUJAHIDEEN": {
         #include "factions\mujahideen.sqf"
     };
-	
+
 	case "SYNDIKAT": {
         #include "factions\syndikat.sqf"
     };
@@ -56,14 +56,10 @@ switch (toUpper(_faction)) do {
         #include "factions\ana.sqf"
     };
 
-    case "FINNS": {
-        #include "factions\finns.sqf"
-    };
-
     case "CSAT": {
         #include "factions\csat.sqf"
     };
-	
+
 	case "CSATPACIFIC": {
         #include "factions\csatpacific.sqf"
     };
@@ -78,10 +74,6 @@ switch (toUpper(_faction)) do {
 
     case "FIA": {
         #include "factions\fia.sqf"
-    };
-
-    case "AHKMA-PMC": {
-        #include "factions\ahkma-pmc.sqf"
     };
 
     case "SPRG": {
@@ -110,10 +102,6 @@ switch (toUpper(_faction)) do {
 
     case "CDF": {
         #include "factions\cdf.sqf"
-    };
-
-    case "BAF": {
-        #include "factions\baf.sqf"
     };
 
     case "DEFAULT": {

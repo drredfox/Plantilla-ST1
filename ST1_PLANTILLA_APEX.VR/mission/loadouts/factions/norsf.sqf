@@ -267,7 +267,7 @@ switch (true) do {
         [[_unit,[_wsmoke,2], [_gsmoke,3]]] call _addtoVest;
         _suppliesMEDIC call _addtoBackpack;
         [_commonRIFLE, _countRIFLELOW] call _addWeaponKit;
-        _defaultInsignia = "MedB";
+        _defaultInsignia = "Medico";
     };
 
 	case (_isMMG): {
@@ -326,7 +326,7 @@ switch (true) do {
         ["secondary", _commonPISTOLSUPPRESSOR] call _attachToWeapon;
 		_suppliesMEDIC call _addtoBackpack;
 		[[_unit,[_irGRENADEblufor,2]]] call _addtoBackpack;
-        _defaultInsignia = "MedB";
+        _defaultInsignia = "Medico";
     };
 
     case (_isReconDemo): {

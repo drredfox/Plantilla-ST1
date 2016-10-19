@@ -1,5 +1,5 @@
 // =============================================================================
-//                          WEAPON ACCESSORIES LIST                              
+//                          WEAPON ACCESSORIES LIST
 // =============================================================================
 
 // =============================================================================
@@ -42,30 +42,6 @@ _laser = "acc_pointer_IR";
 _bipodBLU = "bipod_01_F_snd";
 _bipodOP = "bipod_02_F_hex";
 _bipodIND = "bipod_03_F_oli";
-
-// =============================================================================
-
-// HLC 
-
-// Suppressors
-_supG3 = "hlc_muzzle_snds_g3";
-_supHK33 = "hlc_muzzle_snds_HK33";
-_supFAL = "hlc_muzzle_snds_fal";
-_supM14 = "hlc_muzzle_snds_M14";
-_sup545AK = "hlc_muzzle_545SUP_AK";
-_sup762AK = "hlc_muzzle_762SUP_AK";
-_sup58 = "muzzle_snds_58_blk_F";
-
-// Scopes
-_ZFSG1 = "HLC_Optic_ZFSG1";
-_ACOG3 = "hlc_optic_accupoint_g3";
-_NWSG3 = "hlc_optic_PVS4G3";
-_SUSAT = "hlc_optic_suit";
-_M14SCOPE = "hlc_optic_artel_m14";
-_LEOPOLD = "hlc_optic_LRT_m14";
-_PSO1 = "HLC_Optic_PSO1";
-_1P29 = "HLC_Optic_1p29";
-_GOSHAWK = "hlc_optic_goshawk";
 
 // =============================================================================
 
@@ -121,7 +97,7 @@ switch (true) do {
         _NVGEN1 = "NVGoggles";
         _NVGEN2 = "NVGoggles";
         _NVGEN4 = "NVGoggles";
-        _NVWIDE = "NVGoggles";    
+        _NVWIDE = "NVGoggles";
     };
 };
 
