@@ -16,10 +16,9 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1618.8574,71.614502,1329.6958};
-		dir[]={-0.87030959,-0.47832865,-0.11738992};
-		up[]={-0.47404099,0.87817872,-0.063940376};
-		aside[]={-0.13367313,-1.8450373e-007,0.99103361};
+		pos[]={1572.6604,71.614502,1287.6016};
+		dir[]={-0.85734189,-0.48416176,-0.17485136};
+		aside[]={-0.19983371,-1.6653939e-007,0.97983944};
 	};
 };
 binarizationWanted=0;
@@ -4277,7 +4276,7 @@ class Mission
 			position[]={1480.822,5,1233.907};
 			class Attributes
 			{
-				onActivation="if (hasInterface) then {[] spawn ST1_Msg;}";
+				onActivation="if (hasInterface) then {[[line1,line2,line3,line4],""SIDE"",0.10,false] spawn BRM_fnc_simpleConv;}";
 				sizeC=0;
 				activationBy="WEST";
 			};
@@ -4292,7 +4291,7 @@ class Mission
 				position[]={1489,5,1234};
 			};
 			title="Ejemplo Comunicaciones HQ";
-			description="Revisa mission\custom-scripts\init-player.sqf para ver cómo funciona BRM_fnc_messageParser";
+			description="Revisa mission\custom-scripts\init-player.sqf para ver cómo funciona BRM_fnc_simpleConv";
 			id=409;
 		};
 		class Item97
@@ -5376,7 +5375,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={1245,5,1236};
-			angle=3.1488178;
+			angle=3.1488171;
 			class Attributes
 			{
 				name="c1";
