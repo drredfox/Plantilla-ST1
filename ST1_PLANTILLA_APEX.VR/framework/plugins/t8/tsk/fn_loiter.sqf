@@ -118,7 +118,7 @@ if ( count _seats > 0 ) then {
 			private [ "_x", "_dir", "_nearMen", "_nearMan" ];
 			_x = _this;
 			sleep 10;
-			// doStop _x;
+			doStop _x;
 			[ _x, "SIT_LOW", "ASIS" ] call BIS_fnc_ambientAnim;
 			sleep 30;
 			_nearMen = nearestObjects [ _x, ["Man"], 20 ];
@@ -149,7 +149,7 @@ _n = 1;
 		private [ "_x", "_dir", "_nearMen", "_nearMan", "_anim" ];
 		_x = _this;
 		sleep 10;
-		// doStop _x;
+		doStop _x;
 		_anim = [ "WATCH1", "WATCH2", "STAND" ] call BIS_fnc_selectRandom;
 		[ _x, _anim, "ASIS" ] call BIS_fnc_ambientAnim;
 		sleep 30;
@@ -184,7 +184,7 @@ if ( count _seats > 0 ) then {
 			private [ "_x", "_dir", "_nearMen", "_nearMan" ];
 			_x = _this;
 			sleep 10;
-			// doStop _x;
+			doStop _x;
 			[ _x, "SIT_LOW", "ASIS" ] call BIS_fnc_ambientAnim;
 			sleep 30;
 			_nearMen = nearestObjects [ _x, ["Land_Campfire_F", "Land_FirePlace_F"], 20 ];
@@ -215,7 +215,7 @@ _n = 1;
 		private [ "_x", "_dir", "_nearMen", "_nearMan", "_anim" ];
 		_x = _this;
 		sleep 10;
-		// doStop _x;
+		doStop _x;
 		_anim = [ "WATCH1", "WATCH2", "STAND" ] call BIS_fnc_selectRandom;
 		[ _x, _anim, "ASIS" ] call BIS_fnc_ambientAnim;
 
@@ -249,7 +249,7 @@ _n = 1;
 		private [ "_x", "_dir", "_nearMen", "_nearMan", "_anim" ];
 		_x = _this;
 		sleep 10;
-		// doStop _x;
+		doStop _x;
 		_anim = [ "WATCH1", "WATCH2", "STAND" ] call BIS_fnc_selectRandom;
 		[ _x, _anim, "ASIS" ] call BIS_fnc_ambientAnim;
 
