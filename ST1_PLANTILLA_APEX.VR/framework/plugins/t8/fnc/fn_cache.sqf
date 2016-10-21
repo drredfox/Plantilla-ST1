@@ -31,8 +31,8 @@ __DEBUG( __FILE__, str( _unitsArray + "_created" ),		_created );
 __DEBUG( __FILE__, str( _unitsArray + "_creating" ),	_creating );
 __DEBUG( __FILE__, str( _unitsArray + "_active" ),		_active );
 
-if ( _active	OR {( typeName _active ) isEqualTo ( typeName "" )}) exitWith	{ __DEBUG( __FILE__, "ZONE AKTIVE - NO CACHING", _this ); };
-if ( !_created	OR {( typeName _created ) isEqualTo ( typeName "" )}) exitWith	{ __DEBUG( __FILE__, "COULD NOT CACHE", _this ); };
+if ( typeName _active  == "STRING") exitWith	{ __DEBUG( __FILE__, "ZONE AKTIVE - NO CACHING", _this ); };
+if ( typeName _created  == "STRING") exitWith	{ __DEBUG( __FILE__, "COULD NOT CACHE", _this ); };
 
 if ( typeName ( missionNamespace getVariable _unitsArray ) == "BOOL" ) exitWith { __DEBUG( __FILE__, "NO CACHING - EVERYBODY WAS DEAD LAST TIME", _this ); };
 
@@ -58,13 +58,13 @@ _unitsToDelete = [];
 
 {	// forEach -> _groups
 	private [ "_commArray", "_originArray", "_memberArray", "_spawnPos", "_groupArray", "_typeOfArray", "_vehicles" ];
-	
+
 	_commArray		= __GetOVAR( _x, "T8U_gvar_Comm", [] );
 	_originArray	= __GetOVAR( _x, "T8U_gvar_Origin", [] );
 	_memberArray	= __GetOVAR( _x, "T8U_gvar_Member", [] );
 
 	_spawnPos		= getPos ( leader _x );
-	
+
 	_typeOfArray	= [];
 	_vehicles		= [];
 
@@ -76,7 +76,7 @@ _unitsToDelete = [];
 			_v = assignedVehicle _x;
 			if ( side _v == side _x AND { alive _v } AND { !( _originArray select 2 ) } ) then
 			{
-				if ( !( _v in _vehicles ) ) then 
+				if ( !( _v in _vehicles ) ) then
 				{
 					_vehicles pushBack _v;
 					_typeOfVehicle = typeof _v;
@@ -89,7 +89,7 @@ _unitsToDelete = [];
 			};
 		};
 	} forEach _memberArray;
-	
+
 	// _originArray = [ _markerArray, _type, _infGroup, _taskArray, _customFNC ];
 	_groupArray = [ [ _typeOfArray, ( _originArray select 0 ), ( _originArray select 2 ), side _x, ( _originArray select 4 ) ], ( _originArray select 3 ),  _commArray, [ _spawnPos ]];
 

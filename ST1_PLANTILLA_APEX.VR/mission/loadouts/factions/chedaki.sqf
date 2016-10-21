@@ -55,22 +55,6 @@ _count40mmCARGO = 40;
 
 switch (true) do {
 
-    case (mission_AGM_enabled): {
-
-        _countBANDAGE = 20;
-        _countMORPHINE = 15;
-        _countEPI = 10;
-        _countBLOODBAG = 5;
-
-        _countBandageCARGO = 40;
-        _countMorphineCARGO = 30;
-        _countEpiCARGO = 20;
-        _countBloodbagCARGO = 10;
-
-        _suppliesMEDIC = [[_unit,[_bandage,_countBANDAGE], [_morphine,_countMORPHINE],[_epi,_countEPI],[_bloodbag,_countBLOODBAG]]];
-        _suppliesNORMAL = [[_unit,[_bandage, 2], [_morphine,1],[_epi, 1]]];
-    };
-
     case (mission_ACE3_enabled): {
 
         _countBANDAGE = 25;
@@ -91,7 +75,7 @@ switch (true) do {
                 _suppliesNORMAL = [[_unit,[_fieldDressing, 2], [_morphine,1],[_epi, 1]]];
             };
             case 1: { // ADVANCED
-                _suppliesMEDIC = [[_unit,[_packingBandage,_countBANDAGE], [_morphine,_countMORPHINE],[_epi,_countEPI],[_saline250,_countBLOODBAG],[_defib,1],[_surgKit,1]]];
+                _suppliesMEDIC = [[_unit,[_packingBandage,_countBANDAGE], [_morphine,_countMORPHINE],[_epi,_countEPI],[_saline250,_countBLOODBAG],[_surgKit,1]]];
                 _suppliesNORMAL = [[_unit,[_fieldDressing, 2],[_packingBandage, 1],[_tourniquet, 1],[_morphine,1],[_epi,1]]];
             };
         };

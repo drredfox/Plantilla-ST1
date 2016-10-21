@@ -16,6 +16,7 @@ _sup762 = "muzzle_snds_B";
 _supLMG = "muzzle_snds_H_MG";
 _sup93 = "muzzle_snds_93mmg_tan";
 _sup338 = "muzzle_snds_338_sand";
+_sup58 = "muzzle_snds_58_ghex_F";
 
 // Scopes
 
