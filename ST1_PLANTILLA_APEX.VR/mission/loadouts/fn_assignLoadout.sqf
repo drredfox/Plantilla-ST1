@@ -116,18 +116,19 @@ if (!isNil "_defaultName") then {
     _name = _this select 3;
     _insignia = _this select 4;
 
-    [{(time > 3)}, {
-      if !(isPlayer _unit) then {
-          _unit setFace _face;
-          _unit setSpeaker _voice;
-          _unit setPitch ([0.85, 1.15] call BIS_fnc_randomNum);
-          if (_name != "default") then {
-              _unit setVariable ["ACE_Name", _name, true];
-              _unit setName _name;
-          };
-      };
-      if (_insignia != "none") then {
-          [_unit, _insignia] call BIS_fnc_setUnitInsignia;
-      };
-    }, []] call CBA_fnc_waitUntilAndExecute;
+    waitUntil{(time > 3)};
+
+    if !(isPlayer _unit) then {
+        _unit setFace _face;
+        _unit setSpeaker _voice;
+        _unit setPitch ([0.85, 1.15] call BIS_fnc_randomNum);
+        if (_name != "default") then {
+            _unit setVariable ["ACE_Name", _name, true];
+            _unit setName _name;
+        };
+    };
+    if (_insignia != "none") then {
+        [_unit, _insignia] call BIS_fnc_setUnitInsignia;
+    };
+
 }, [_unit, _doVoice, _doFace, _doFinalName, _defaultInsignia]] call CBA_fnc_globalExecute;
