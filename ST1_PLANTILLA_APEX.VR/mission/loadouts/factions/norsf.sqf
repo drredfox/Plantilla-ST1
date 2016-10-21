@@ -24,11 +24,11 @@ _commonSNIPER = _SAMR;
 _commonAT = _AT4CSHEAT;
 _specAT = _MAAWS;
 _commonSMG = _RHSM4;
-_commonRCO = "RH_ta31rmr";
-_commonCCO = "RH_eotech553";
+_commonRCO = _RCO;
+_commonCCO = _EOT;
 _commonMAGNIFIED = _SOS;
-_commonSUPPRESSOR = "RH_qdss_nt4";
-_commonPISTOLSUPPRESSOR = "RH_sfn57";
+_commonSUPPRESSOR = _sup556;
+_commonPISTOLSUPPRESSOR = "";
 _NVG = _NVGEN4;
 
 // AMMO COUNT ==================================================================
@@ -90,7 +90,7 @@ switch (true) do {
                 _suppliesNORMAL = [[_unit,[_fieldDressing, 2], [_morphine,1],[_epi, 1]]];
             };
             case 1: { // ADVANCED
-                _suppliesMEDIC = [[_unit,[_packingBandage,_countBANDAGE], [_morphine,_countMORPHINE],[_epi,_countEPI],[_saline250,_countBLOODBAG],[_defib,1],[_surgKit,1]]];
+                _suppliesMEDIC = [[_unit,[_packingBandage,_countBANDAGE], [_morphine,_countMORPHINE],[_epi,_countEPI],[_saline250,_countBLOODBAG],[_surgKit,1]]];
                 _suppliesNORMAL = [[_unit,[_fieldDressing, 2],[_packingBandage, 1],[_tourniquet, 1],[_morphine,1],[_epi,1]]];
             };
         };
@@ -267,7 +267,7 @@ switch (true) do {
         [[_unit,[_wsmoke,2], [_gsmoke,3]]] call _addtoVest;
         _suppliesMEDIC call _addtoBackpack;
         [_commonRIFLE, _countRIFLELOW] call _addWeaponKit;
-        _defaultInsignia = "MedB";
+        _defaultInsignia = "Medico";
     };
 
 	case (_isMMG): {
@@ -291,7 +291,7 @@ switch (true) do {
         [_commonRIFLEGL, _countRIFLE] call _addWeaponKit;
         [_commonPISTOL, _countPISTOL] call _addWeaponKit;
 		["primary", _commonRCO] call _attachToWeapon;
-		["primary", "RH_peq15b"] call _attachToWeapon;
+		["primary", "acc_pointer_IR"] call _attachToWeapon;
         ["primary", _commonSUPPRESSOR] call _attachToWeapon;
         ["secondary", _commonPISTOLSUPPRESSOR] call _attachToWeapon;
 		[[_unit,[(_commonRIFLEGL select 1),5],[(_commonRIFLEGL select 2),10],[_irGRENADEblufor,2]]] call _addtoBackpack;
@@ -306,7 +306,7 @@ switch (true) do {
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         [_commonPISTOL, _countPISTOL] call _addWeaponKit;
 		["primary", _commonRCO] call _attachToWeapon;
-		["primary", "RH_peq15b"] call _attachToWeapon;
+		["primary", "acc_pointer_IR"] call _attachToWeapon;
         ["primary", _commonSUPPRESSOR] call _attachToWeapon;
         ["secondary", _commonPISTOLSUPPRESSOR] call _attachToWeapon;
 		[_commonAT] call _addWeapon;
@@ -321,12 +321,12 @@ switch (true) do {
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         [_commonPISTOL, _countPISTOL] call _addWeaponKit;
 		["primary", _commonRCO] call _attachToWeapon;
-		["primary", "RH_peq15b"] call _attachToWeapon;
+		["primary", "acc_pointer_IR"] call _attachToWeapon;
         ["primary", _commonSUPPRESSOR] call _attachToWeapon;
         ["secondary", _commonPISTOLSUPPRESSOR] call _attachToWeapon;
 		_suppliesMEDIC call _addtoBackpack;
 		[[_unit,[_irGRENADEblufor,2]]] call _addtoBackpack;
-        _defaultInsignia = "MedB";
+        _defaultInsignia = "Medico";
     };
 
     case (_isReconDemo): {
@@ -337,7 +337,7 @@ switch (true) do {
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         [_commonPISTOL, _countPISTOL] call _addWeaponKit;
 		["primary", _commonRCO] call _attachToWeapon;
-		["primary", "RH_peq15b"] call _attachToWeapon;
+		["primary", "acc_pointer_IR"] call _attachToWeapon;
         ["primary", _commonSUPPRESSOR] call _attachToWeapon;
         ["secondary", _commonPISTOLSUPPRESSOR] call _attachToWeapon;
 		[[_unit, [_clacker,1],[_mineDetector,1],[_defusalKit,1]]] call _addtoUniform;
@@ -402,4 +402,4 @@ _suppliesNORMAL call _addtoUniform;
 
 ["SR"] call _addRadio;
 
-if ((mission_AGM_enabled)||(mission_ACE3_enabled)) then { [[_unit, [_earBuds,1]]] call _addtoUniform };
+if (mission_ACE3_enabled) then { [[_unit, [_earBuds,1]]] call _addtoUniform };
