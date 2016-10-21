@@ -16,20 +16,20 @@ _defaultInsignia = "USP_PATCH_USA_USMC_FORCE_RECON";
 
 // WEAPONS =====================================================================
 
-_commonRIFLE = _G3SG1;
-_commonRIFLEGL = _G3KA4GL;
-_commonPISTOL = _USP;
+_commonRIFLE = _RHSM16A4;
+_commonRIFLEGL = _RHSM4GL;
+_commonPISTOL = _M9;
 _commonMG = _M249S;
-_commonMARKSMAN = _G3SG1;
-_commonSNIPER = _M14;
+_commonMARKSMAN = _M14EBR;
+_commonSNIPER = _M14EBR;
 _commonAT = _AT4;
-_specAT = _MAAWS;
-_commonSMG = _SBR9;
-_commonRCO = _ZFSG1;
-_commonCCO = _ACOred;
-_commonMAGNIFIED = _M14SCOPE;
-_commonSUPPRESSOR = "hlc_muzzle_snds_g3";
-_commonPISTOLSUPPRESSOR = "RH_aacusp";
+_specAT = _AT4;
+_commonSMG = _MP5K;
+_commonRCO = "rhsusf_acc_ACOG3";
+_commonCCO = "rhsusf_acc_eotech_552";
+_commonMAGNIFIED = _FHQLEOPOLD;
+_commonSUPPRESSOR = "rhsusf_acc_rotex5_grey";
+_commonPISTOLSUPPRESSOR = _sup9mm ;
 _NVG = "rhsusf_ANPVS_14";
 
 // AMMO COUNT ==================================================================
@@ -55,22 +55,6 @@ _count40mmCARGO = 40;
 
 switch (true) do {
 
-    case (mission_AGM_enabled): {
-
-        _countBANDAGE = 20;
-        _countMORPHINE = 15;
-        _countEPI = 10;
-        _countBLOODBAG = 5;
-
-        _countBandageCARGO = 40;
-        _countMorphineCARGO = 30;
-        _countEpiCARGO = 20;
-        _countBloodbagCARGO = 10;
-
-        _suppliesMEDIC = [[_unit,[_bandage,_countBANDAGE], [_morphine,_countMORPHINE],[_epi,_countEPI],[_bloodbag,_countBLOODBAG]]];
-        _suppliesNORMAL = [[_unit,[_bandage, 2], [_morphine,1],[_epi, 1]]];
-    };
-
     case (mission_ACE3_enabled): {
 
         _countBANDAGE = 25;
@@ -84,17 +68,9 @@ switch (true) do {
         _countEpiCARGO = 20;
         _countBloodbagCARGO = 10;
 
-        switch (param_ace3_medical_level) do {
+		_suppliesMEDIC = [[_unit,[_packingBandage,_countBANDAGE], [_morphine,_countMORPHINE],[_epi,_countEPI],[_saline250,_countBLOODBAG],[_surgKit,1]]];
+		_suppliesNORMAL = [[_unit,[_fieldDressing, 2],[_packingBandage, 1],[_tourniquet, 1],[_morphine,1],[_epi,1]]];
 
-            case 0: { // SIMPLE
-                _suppliesMEDIC = [[_unit,[_fieldDressing,_countBANDAGE], [_morphine,_countMORPHINE],[_epi,_countEPI],[_bloodbag,_countBLOODBAG]]];
-                _suppliesNORMAL = [[_unit,[_fieldDressing, 2], [_morphine,1],[_epi, 1]]];
-            };
-            case 1: { // ADVANCED
-                _suppliesMEDIC = [[_unit,[_packingBandage,_countBANDAGE], [_morphine,_countMORPHINE],[_epi,_countEPI],[_saline250,_countBLOODBAG],[_defib,1],[_surgKit,1]]];
-                _suppliesNORMAL = [[_unit,[_fieldDressing, 2],[_packingBandage, 1],[_tourniquet, 1],[_morphine,1],[_epi,1]]];
-            };
-        };
     };
 
     default {
@@ -255,7 +231,7 @@ switch (true) do {
         [[_unit,[_wsmoke,2], [_gsmoke,3]]] call _addtoVest;
         _suppliesMEDIC call _addtoBackpack;
         [_commonRIFLE, _countRIFLELOW] call _addWeaponKit;
-        _defaultInsignia = "MedB";
+        _defaultInsignia = "Medico";
     };
 
     case (_isMMG): {
@@ -285,7 +261,7 @@ switch (true) do {
         _suppliesMEDIC call _addtoBackpack;
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         ["primary", _commonSUPPRESSOR] call _attachToWeapon;
-        _defaultInsignia = "MedB";
+        _defaultInsignia = "Medico";
     };
 
     case (_isReconDemo): {
@@ -354,4 +330,4 @@ _suppliesNORMAL call _addtoUniform;
 
 ["SR"] call _addRadio;
 
-if ((mission_AGM_enabled)||(mission_ACE3_enabled)) then { [[_unit, [_earBuds,1]]] call _addtoUniform };
+//if (mission_ACE3_enabled) then { [[_unit, [_earBuds,1]]] call _addtoUniform };
