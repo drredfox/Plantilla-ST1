@@ -180,7 +180,7 @@ _tripod = "RHS_M2_Tripod_Bag";
 
 if (isPlayer _unit) then {
 	player_DLC = _unit getVariable ["unit_DLC", false];
-	if (player_DLC) then { 
+	if (player_DLC) then {
 		_sniperUniform = "U_B_FullGhillie_sard";
 		_reconMARKSMAN = _MAR10;
 		_reconMAGNIFIED = "optic_AMS";
@@ -230,7 +230,7 @@ switch (true) do {
     case (_isReconLeader): {
         [_reconleaderHEAD, _reconUNIFORM, _reconVEST, "empty"] call _useUniform;
 		["BPR"] call _addRadio;
-        [[_unit,[_bsmoke,2],[_gsmoke,2],[_grenade,2],[_IRStrobe,1],[_CableTie,1],[(_commonRIFLE select 2),_countRIFLET],[_gchemlight,2]]] call _addtoVest;    
+        [[_unit,[_bsmoke,2],[_gsmoke,2],[_grenade,2],[_IRStrobe,1],[_CableTie,1],[(_commonRIFLE select 2),_countRIFLET],[_gchemlight,2]]] call _addtoVest;
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         [_commonPISTOL, _countPISTOL] call _addWeaponKit;
         ["primary", _commonSUPPRESSOR] call _attachToWeapon;
@@ -341,7 +341,7 @@ switch (true) do {
 		["primary", _commonLASER] call _attachToWeapon;
 
     };
-	
+
 	case (_isRecon): {
         [_reconHEAD, _reconUNIFORM, _reconVEST, _commonBACKPACK] call _useUniform;
         ["binoc"] call _addOptics;
@@ -356,7 +356,7 @@ switch (true) do {
 	case (_isReconLeader): {
         [_reconleaderHEAD, _reconUNIFORM, _reconVEST, "empty"] call _useUniform;
 		["BPR"] call _addRadio;
-        [[_unit,[_bsmoke,2],[_gsmoke,2],[_grenade,2],[_IRStrobe,1],[_CableTie,1],[(_commonRIFLE select 2),_countRIFLET],[_gchemlight,2]]] call _addtoVest;    
+        [[_unit,[_bsmoke,2],[_gsmoke,2],[_grenade,2],[_IRStrobe,1],[_CableTie,1],[(_commonRIFLE select 2),_countRIFLET],[_gchemlight,2]]] call _addtoVest;
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         [_commonPISTOL, _countPISTOL] call _addWeaponKit;
         ["primary", _commonSUPPRESSOR] call _attachToWeapon;
@@ -364,7 +364,7 @@ switch (true) do {
 		["secondary", _commonPISTOLSUPPRESSOR] call _attachToWeapon;
 		["laserdesignator"] call _addOptics;
     };
-	
+
     case (_isReconMedic): {
         [_reconHEAD, _reconUNIFORM, _reconVEST, _medBACKPACK] call _useUniform;
         ["binoc"] call _addOptics;
@@ -385,7 +385,7 @@ switch (true) do {
         ["primary", _commonSUPPRESSOR] call _attachToWeapon;
 		["primary", _commonRCO] call _attachToWeapon;
     };
-	
+
 	case (_isHeavyAT): {
         [_commonHEAD, _commonUNIFORM, _commonVEST, _medBackpack] call _useUniform;
         [[_unit,[_wsmoke,2],[_gsmoke,2],[_grenade,2]]] call _addtoVest;
@@ -393,9 +393,9 @@ switch (true) do {
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         ["primary", _commonCCO] call _attachToWeapon;
         ["primary", _commonLASER] call _attachToWeapon;
-        [_specAT, 2] call _addWeaponKit; 
+        [_specAT, 2] call _addWeaponKit;
     };
-	
+
 	case (_isATAssistant): {
         [_commonHEAD, _commonUNIFORM, _commonVEST, _bigBackpack] call _useUniform;
         [[_unit,[_wsmoke,2],[_gsmoke,2],[_grenade,2],[(_commonRIFLE select 2),3],[_gchemlight,2],[_IRStrobe,1],[_CableTie,1]]] call _addtoVest;
@@ -404,7 +404,7 @@ switch (true) do {
         ["primary", _commonCCO] call _attachToWeapon;
         ["primary", _commonLASER] call _attachToWeapon;
     };
-	
+
 	case (_isAA): {
         [_commonHEAD, _commonUNIFORM, _commonVEST, _medBackpack] call _useUniform;
         [[_unit,[_wsmoke,2],[_gsmoke,2],[_grenade,2]]] call _addtoVest;
@@ -412,9 +412,9 @@ switch (true) do {
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         ["primary", _commonCCO] call _attachToWeapon;
         ["primary", _commonLASER] call _attachToWeapon;
-        [_specAA, 2] call _addWeaponKit; 
+        [_specAA, 2] call _addWeaponKit;
     };
-	
+
 	case (_isAAAssistant): {
         [_commonHEAD, _commonUNIFORM, _commonVEST, _bigBackpack] call _useUniform;
         [[_unit,[_wsmoke,2],[_gsmoke,2],[_grenade,2],[(_commonRIFLE select 2),3],[_gchemlight,2],[_IRStrobe,1],[_CableTie,1]]] call _addtoVest;
@@ -489,4 +489,4 @@ _suppliesNORMAL call _addtoUniform;
 
 ["LR"] call _addRadio;
 
-//if ((mission_AGM_enabled)||(mission_ACE3_enabled)) then { [[_unit, [_earBuds,1]]] call _addtoUniform };
+//if (mission_ACE3_enabled) then { [[_unit, [_earBuds,1]]] call _addtoUniform };
