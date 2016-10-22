@@ -29,7 +29,7 @@ _commonRCO = "rhs_acc_1p29";
 _commonCCO = "rhs_acc_1p63";
 _commonMAGNIFIED = "rhs_acc_pso1m2";
 _commonSUPPRESSOR = "rhs_acc_dtk4short";
-_commonPISTOLSUPPRESSOR = "muzzle_snds_L";
+_commonPISTOLSUPPRESSOR = "";
 _NVG = _NVGEN1;
 
 // AMMO COUNT ==================================================================
@@ -113,7 +113,7 @@ _randomGOGGLE = _goggleLIST call BIS_fnc_selectRandom;
 
 _commonHEAD = "empty";
 _leaderHEAD = "rhs_fieldcap_digi";
-_officerHEAD = "LOP_H_ChDKZ_Beret";
+_officerHEAD = "H_Beret_blk";
 _medicHEAD = _commonHEAD;
 _crewmanHEAD = "rhs_tsh4_bala";
 _pilotHEAD = _commonHEAD;
@@ -124,21 +124,21 @@ _demoHEAD = _commonHEAD;
 _reconHEAD = _commonHEAD;
 
 _commonUNIFORM = _randomUNIFORM;
-_SLUNIFORM = "rhsgref_uniform_reed";
-_FTLUNIFORM = "LOP_U_ChDKZ_Fatigue_03";
-_officerUNIFORM = "LOP_U_ChDKZ_Fatigue_Bardak";
+_SLUNIFORM = _randomUNIFORM;
+_FTLUNIFORM = _randomUNIFORM;
+_officerUNIFORM = _randomUNIFORM;
 _pilotUNIFORM = _commonUNIFORM;
-_sniperUNIFORM = "LOP_U_ChDKZ_Fatigue_03";
+_sniperUNIFORM = _randomUNIFORM;
 _marksmanUNIFORM = _commonUNIFORM;
 _helicrewUNIFORM = _commonUNIFORM;
 _crewUNIFORM = _commonUNIFORM;
-_mgUNIFORM = "LOP_U_ChDKZ_Fatigue_02";
+_mgUNIFORM = _randomUNIFORM;
 _medicUNIFORM = _commonUNIFORM;
 _demoUNIFORM = _commonUNIFORM;
-_reconUNIFORM = "LOP_U_ChDKZ_Fatigue_03";
+_reconUNIFORM = _commonUNIFORM;
 
 _commonVEST = _randomVEST;
-_officerVEST = _commonVEST;
+_officerVEST = "rhs_vest_pistol_holster";
 _ftlVEST = _commonVEST;
 _slVEST = _commonVEST;
 _mgVEST = _commonVEST;
@@ -149,7 +149,7 @@ _marksmanVEST = _commonVEST;
 _reconVEST = _commonVEST;
 
 _commonBACKPACK = "rhs_sidor";
-_bigBACKPACK = "TRYK_B_Alicepack";
+_bigBACKPACK = "rhs_assault_umbts";
 
 if !(_isLeader) then { _unit addGoggles _randomGOGGLE };
 
