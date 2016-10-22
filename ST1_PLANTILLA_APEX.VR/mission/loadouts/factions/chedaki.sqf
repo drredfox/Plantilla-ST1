@@ -25,11 +25,11 @@ _commonSNIPER = _SVD;
 _commonAT = _RPG26;
 _specAT = _RPG7;
 _commonSMG = _AKS74U;
-_commonRCO = "HLC_Optic_1p29";
-_commonCCO = "hlc_optic_kobra";
-_commonMAGNIFIED = "HLC_Optic_PSO1";
-_commonSUPPRESSOR = "hlc_muzzle_762SUP_AK";
-_commonPISTOLSUPPRESSOR = _sup9mm;
+_commonRCO = "rhs_acc_1p29";
+_commonCCO = "rhs_acc_1p63";
+_commonMAGNIFIED = "rhs_acc_pso1m2";
+_commonSUPPRESSOR = "rhs_acc_dtk4short";
+_commonPISTOLSUPPRESSOR = "muzzle_snds_L";
 _NVG = _NVGEN1;
 
 // AMMO COUNT ==================================================================
@@ -68,17 +68,9 @@ switch (true) do {
         _countEpiCARGO = 20;
         _countBloodbagCARGO = 10;
 
-        switch (param_ace3_medical_level) do {
+		_suppliesMEDIC = [[_unit,[_packingBandage,_countBANDAGE], [_morphine,_countMORPHINE],[_epi,_countEPI],[_saline250,_countBLOODBAG],[_defib,1],[_surgKit,1]]];
+		_suppliesNORMAL = [[_unit,[_fieldDressing, 2],[_packingBandage, 1],[_tourniquet, 1],[_morphine,1],[_epi,1]]];
 
-            case 0: { // SIMPLE
-                _suppliesMEDIC = [[_unit,[_fieldDressing,_countBANDAGE], [_morphine,_countMORPHINE],[_epi,_countEPI],[_bloodbag,_countBLOODBAG]]];
-                _suppliesNORMAL = [[_unit,[_fieldDressing, 2], [_morphine,1],[_epi, 1]]];
-            };
-            case 1: { // ADVANCED
-                _suppliesMEDIC = [[_unit,[_packingBandage,_countBANDAGE], [_morphine,_countMORPHINE],[_epi,_countEPI],[_saline250,_countBLOODBAG],[_surgKit,1]]];
-                _suppliesNORMAL = [[_unit,[_fieldDressing, 2],[_packingBandage, 1],[_tourniquet, 1],[_morphine,1],[_epi,1]]];
-            };
-        };
     };
 
     default {
@@ -97,14 +89,14 @@ _headsLIST = [
 ];
 
 _uniformsLIST = [
-    "LOP_U_ChDKZ_Fatigue_04",
-    "LOP_U_ChDKZ_Fatigue_01"
+    "rhsgref_uniform_reed",
+	"rhsgref_uniform_specter"
 ];
 
 _vestsLIST = [
-    "LOP_U_ChDKZ_Fatigue_04",
-	"LOP_U_ChDKZ_Fatigue_02",
-    "LOP_U_ChDKZ_Fatigue_01"
+    "V_TacVest_oli",
+	"V_Chestrig_rgr",
+	"rhs_6sh92_digi_vog"
 ];
 
 _goggleLIST = [
@@ -132,7 +124,7 @@ _demoHEAD = _commonHEAD;
 _reconHEAD = _commonHEAD;
 
 _commonUNIFORM = _randomUNIFORM;
-_SLUNIFORM = "LOP_U_ChDKZ_Fatigue_Commander";
+_SLUNIFORM = "rhsgref_uniform_reed";
 _FTLUNIFORM = "LOP_U_ChDKZ_Fatigue_03";
 _officerUNIFORM = "LOP_U_ChDKZ_Fatigue_Bardak";
 _pilotUNIFORM = _commonUNIFORM;
@@ -267,7 +259,7 @@ switch (true) do {
         [[_unit,[_wsmoke,2], [_gsmoke,3]]] call _addtoVest;
         _suppliesMEDIC call _addtoBackpack;
         [_commonRIFLE, _countRIFLELOW] call _addWeaponKit;
-        _defaultInsignia = "Medico";
+        _defaultInsignia = "MedB";
     };
 
     case (_isMMG): {
@@ -297,7 +289,7 @@ switch (true) do {
         _suppliesMEDIC call _addtoBackpack;
         [_commonRIFLE, _countRIFLE] call _addWeaponKit;
         ["primary", _commonSUPPRESSOR] call _attachToWeapon;
-        _defaultInsignia = "Medico";
+        _defaultInsignia = "MedB";
     };
 
     case (_isReconDemo): {
@@ -365,5 +357,3 @@ _suppliesNORMAL call _addtoUniform;
 ["ItemMap", "ItemCompass", "ItemWatch"] call _linkItem;
 
 ["SR"] call _addRadio;
-
-//if (mission_ACE3_enabled) then { [[_unit, [_earBuds,1]]] call _addtoUniform };
