@@ -63,9 +63,7 @@ _VOG25 = "rhs_VOG25";
 // =============================================================================
 // WEAPONS
 
-_M9 = ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"];
-_AK103 = ["rhs_weap_ak103",_30rnd762AKM];
-
+//Rusia
 _AK74M = ["rhs_weap_ak74m",_30rnd545AK];
 _AK74MDOUBLEMAG = ["rhs_weap_ak74m_2mag",_30rnd545AK];
 _AK74MCAMO = ["rhs_weap_ak74m_2mag_camo",_30rnd545AK];
@@ -73,8 +71,26 @@ _AK74FOLDED = ["rhs_weap_ak74m_folded",_30rnd545AK];
 _AK74DESERT = ["rhs_weap_ak74m_desert",_30rnd545AK];
 _AK74GP = ["rhs_weap_ak74m_gp25",_30rnd545AK,_VOG25];
 
+_AK103 = ["rhs_weap_ak103",_30rnd762AKM];
+
+_AKM = ["rhs_weap_akm",_30rnd762AKM];
 _AKMGL = ["rhs_weap_akm_gp25", _30rnd762AKM, _VOG25];
+
+_AKMS = ["rhs_weap_akms",_30rnd762AKM];
+_AKMSGL = ["rhs_weap_akms_gp25",_30rnd762AKM,_VOG25];
+
 _AKS74U = ["rhs_weap_aks74u", _30rnd545AK];
+
+_PKP = ["rhs_weap_pkp",_100rnd762PKP];
+_PKM = ["rhs_weap_pkm",_100rnd762PKP];
+
+_SVD = ["rhs_weap_svdp",_10rnd762SVD];
+_SVDS = ["rhs_weap_svds",_10rnd762SVD];
+_SVDCAMO = ["rhs_weap_svdp_wd",_10rnd762SVD];
+
+_Makarov = ["rhs_weap_makarov_pm", "rhs_mag_9x18_8_57N181S"];
+
+//USA
 
 _RHSM16A4 = ["rhs_weap_m16a4_carryhandle",_30rnd556STANAG];
 _RHSM16A42 = ["rhs_weap_m16a4_grip",_30rnd556STANAG];
@@ -90,15 +106,6 @@ _RHSHK416GL = ["rhs_weap_hk416d145_m320",_30rnd556STANAG,_40mm];
 _M14EBR = ["rhs_weap_m14ebrri",_20rnd762EBR];
 
 _SR25 = ["rhs_weap_sr25", "rhsusf_20Rnd_762x51_m993_Mag"];
-
-_RHSAKM = ["rhs_weap_akm",_30rnd762AKM];
-_RHSAKMGL = ["rhs_weap_akm_gp25",_30rnd762AKM,_VOG25];
-_RHSAKMS = ["rhs_weap_akms",_30rnd762AKM];
-_RHSAKMSGL = ["rhs_weap_akms_gp25",_30rnd762AKM,_VOG25];
-
-_SVD = ["rhs_weap_svdp",_10rnd762SVD];
-_SVDS = ["rhs_weap_svds",_10rnd762SVD];
-_SVDCAMO = ["rhs_weap_svdp_wd",_10rnd762SVD];
 
 _M2010 = ["rhs_weap_XM2010",_5rnd300win];
 _M110 = ["RH_m110",_20rnd762];
@@ -117,9 +124,7 @@ _M320 = ["rhs_weap_M320",_40mm];
 _M590S = ["rhs_weap_M590_5RD",_5rndBuck];
 _M590L = ["rhs_weap_M590_8RD",_8rndBuck];
 
-_PKP = ["rhs_weap_pkp",_100rnd762PKP];
-_PKM = ["rhs_weap_pkm",_100rnd762PKP];
-
+_M9 = ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"];
 
 // =============================================================================
 // =============================================================================
