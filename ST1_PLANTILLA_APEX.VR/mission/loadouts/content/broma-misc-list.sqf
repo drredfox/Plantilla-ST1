@@ -140,6 +140,7 @@ _M26clacker = "ACE_M26_Clacker";
 _defusalKit = "ACE_DefusalKit";
 _deadManSwitch = "ACE_DeadManSwitch";
 _cellphone = "ACE_Cellphone";
+_earBuds = "ACE_EarPlugs";
 _microDAGR = "ACE_microDAGR";
 _mapTools = "ACE_MapTools";
 _uavBattery = "ACE_UAVBattery";
