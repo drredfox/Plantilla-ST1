@@ -23,6 +23,8 @@ _M9 = ["rhsusf_weap_m9","rhsusf_mag_15Rnd_9x19_JHP"];
 // AMMO
 
 _30rnd545AK = "rhs_30Rnd_545x39_AK";
+_30rnd762AKM = "rhs_30Rnd_762x39mm";
+
 _100rnd762PKP = "rhs_100Rnd_762x54mmR";
 _10rnd762SVD = "rhs_10Rnd_762x54mmR_7N1";
 _20rnd762EBR = "rhsusf_20Rnd_762x51_m118_special_Mag";
@@ -47,8 +49,6 @@ _40mmFwhite = "UGL_FlareWhite_F";
 _40mmFgreen = "UGL_FlareGreen_F";
 _40mmFred = "UGL_FlareRed_F";
 
-_30rnd762AKM = "rhs_30Rnd_762x39mm";
-
 _5rnd300win = "rhsusf_5Rnd_300winmag_xm2010";
 
 _5rndBuck = "rhsusf_5Rnd_00Buck";
@@ -72,6 +72,9 @@ _AK74MCAMO = ["rhs_weap_ak74m_2mag_camo",_30rnd545AK];
 _AK74FOLDED = ["rhs_weap_ak74m_folded",_30rnd545AK];
 _AK74DESERT = ["rhs_weap_ak74m_desert",_30rnd545AK];
 _AK74GP = ["rhs_weap_ak74m_gp25",_30rnd545AK,_VOG25];
+
+_AKMGL = ["rhs_weap_akm_gp25", _30rnd762AKM, _VOG25];
+_AKS74U = ["rhs_weap_aks74u", _30rnd545AK];
 
 _RHSM16A4 = ["rhs_weap_m16a4_carryhandle",_30rnd556STANAG];
 _RHSM16A42 = ["rhs_weap_m16a4_grip",_30rnd556STANAG];
